@@ -120,7 +120,7 @@ function renderArticles(data){
     /*featuredContainer.innerHTML = "";
     songsContainer.innerHTML = "";*/
 
-    data.forEach(article=>{
+    [...data].reverse().forEach(article=>{
 
         const card = createCard(article);
 
