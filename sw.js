@@ -2,56 +2,119 @@ const CACHE_NAME = "sakha-pustika-v1";
 
 const urlsToCache = [
 
-"/",
-"/index.html",
-"/article.html",
-"/styles.css",
-"/script.js",
-"/manifest.json",
-"/articles/content.json"
+    "/",
+    "/articles/content.json"
 
 ];
 
-self.addEventListener('install', () => {
-    self.skipWaiting();
-});
+/* -------------------------
+   INSTALL
+-------------------------- */
 
 self.addEventListener(
 "install",
-event=>{
+event => {
 
-event.waitUntil(
+    self.skipWaiting();
 
-caches.open(CACHE_NAME)
-.then(cache=>{
+    event.waitUntil(
 
-return cache.addAll(
-urlsToCache
-);
+        caches.open(CACHE_NAME)
+        .then(cache => {
 
-})
+            return cache.addAll(
+                urlsToCache
+            );
 
-);
+        })
+
+    );
 
 });
 
+/* -------------------------
+   ACTIVATE
+-------------------------- */
+
+self.addEventListener(
+"activate",
+event => {
+
+    event.waitUntil(
+
+        Promise.all([
+
+            clients.claim(),
+
+            caches.keys()
+            .then(keys => {
+
+                return Promise.all(
+
+                    keys.map(key => {
+
+                        if(
+                        key !== CACHE_NAME
+                        ){
+
+                            return caches.delete(
+                            key
+                            );
+
+                        }
+
+                    })
+
+                );
+
+            })
+
+        ])
+
+    );
+
+});
+
+/* -------------------------
+   FETCH
+-------------------------- */
+
 self.addEventListener(
 "fetch",
-event=>{
+event => {
 
-event.respondWith(
+    event.respondWith(
 
-caches.match(
-event.request
-)
+        fetch(event.request)
 
-.then(response=>{
+        .then(response => {
 
-return response ||
-fetch(event.request);
+            const copy =
+            response.clone();
 
-})
+            caches.open(
+            CACHE_NAME
+            ).then(cache => {
 
-);
+                cache.put(
+                event.request,
+                copy
+                );
+
+            });
+
+            return response;
+
+        })
+
+        .catch(() => {
+
+            return caches.match(
+            event.request
+            );
+
+        })
+
+    );
 
 });
