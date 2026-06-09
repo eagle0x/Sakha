@@ -408,24 +408,27 @@ randomQuote();
 
 
 /* -------------------------
-   PWA READY
+   CHECK FOR UPDATES
 -------------------------- */
 
 if("serviceWorker" in navigator){
 
-window.addEventListener(
-"load",
-()=>{
+    navigator.serviceWorker
+    .register("./sw.js")
 
-navigator.serviceWorker
-.register(
-"./sw.js"
-);
+    .then(reg => {
 
-});
+        reg.update();
+
+        setInterval(() => {
+
+            reg.update();
+
+        }, 300000);
+
+    });
 
 }
-
 
 
 /* -------------------------
