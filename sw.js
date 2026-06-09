@@ -12,6 +12,10 @@ const urlsToCache = [
 
 ];
 
+self.addEventListener('install', () => {
+    self.skipWaiting();
+});
+
 self.addEventListener(
 "install",
 event=>{
