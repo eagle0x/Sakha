@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>लेख पढ़ें | शाखा पुस्तिका</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+.reading-container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:40px 20px;
+
+}
+
+.back-btn{
+
+    display:inline-block;
+
+    margin-bottom:25px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#ea580c;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+}
+
+.article-cover{
+
+    width:100%;
+
+    max-height:450px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+}
+
+.article-category{
+
+    display:inline-block;
+
+    background:#f97316;
+
+    color:white;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    margin-bottom:20px;
+
+}
+
+.article-title{
+
+    font-size:2.6rem;
+
+    margin-bottom:20px;
+
+}
+
+.article-meta{
+
+    color:#64748b;
+
+    margin-bottom:30px;
+
+}
+
+.article-body{
+
+    line-height:2.2;
+
+    font-size:1.15rem;
+
+}
+
+.article-actions{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:40px;
+
+}
+
+.action-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    background:#ea580c;
+
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+}
+
+.progress-bar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    height:4px;
+
+    background:#ea580c;
+
+    width:0%;
+
+    z-index:9999;
+
+}
+
+.related{
+
+    margin-top:70px;
+
+}
+
+.related-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+
+}
+
+.related-card{
+
+    background:white;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.related-card img{
+
+    width:100%;
+    height:180px;
+
+    object-fit:cover;
+
+}
+
+.related-card-content{
+
+    padding:15px;
+
+}
+
+@media(max-width:768px){
+
+.article-title{
+
+font-size:2rem;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="progressBar" class="progress-bar"></div>
+
+<div class="reading-container">
+
+<a href="index.html" class="back-btn">
+← वापस जाएं
+</a>
+
+<div id="articleContainer">
+
+</div>
+
+<section class="related">
+
+<h2>
+संबंधित लेख
+</h2>
+
+<br>
+
+<div
+id="relatedArticles"
+class="related-grid">
+
+</div>
+
+</section>
+
+</div>
+
+<script>
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+const articleId =
+params.get("id");
+
+async function loadArticle(){
+
+const res =
+await fetch(
+"articles/content.json"
+);
+
+const data =
+await res.json();
+
+const article =
+data.find(
+a=>a.id == articleId
+);
+
+if(!article){
+
+document.body.innerHTML =
+
+"<h1 style='padding:50px'>लेख नहीं मिला</h1>";
+
+return;
+
+}
+
+document.getElementById(
+"articleContainer"
+).innerHTML = `
+
+<span class="article-category">
+
+${article.category}
+
+</span>
+
+<h1 class="article-title">
+
+${article.title}
+
+</h1>
+
+<div class="article-meta">
+
+📅 शाखा पुस्तिका
+
+</div>
+
+<img
+src="${article.image}"
+class="article-cover">
+
+<div class="article-body">
+
+${article.content}
+
+</div>
+
+<div class="article-actions">
+
+<button
+class="action-btn"
+onclick="shareArticle()">
+
+📤 शेयर
+
+</button>
+
+<button
+class="action-btn"
+onclick="printArticle()">
+
+🖨️ PDF
+
+</button>
+
+</div>
+
+`;
+
+renderRelated(
+data,
+article
+);
+
+}
+
+function renderRelated(
+all,
+current
+){
+
+const related =
+all.filter(
+
+a=>
+
+a.category === current.category
+
+&&
+
+a.id !== current.id
+
+)
+
+.slice(0,4);
+
+document.getElementById(
+"relatedArticles"
+).innerHTML =
+
+related.map(item=>`
+
+<a
+href="article.html?id=${item.id}"
+style="text-decoration:none;color:inherit">
+
+<div class="related-card">
+
+<img src="${item.image}">
+
+<div class="related-card-content">
+
+<h3>
+
+${item.title}
+
+</h3>
+
+<p>
+
+${item.description}
+
+</p>
+
+</div>
+
+</div>
+
+</a>
+
+`).join("");
+
+}
+
+function shareArticle(){
+
+if(navigator.share){
+
+navigator.share({
+
+title:
+document.title,
+
+url:
+window.location.href
+
+});
+
+}
+
+}
+
+function printArticle(){
+
+window.print();
+
+}
+
+window.addEventListener(
+"scroll",
+()=>{
+
+const winScroll =
+
+document.body.scrollTop ||
+
+document.documentElement.scrollTop;
+
+const height =
+
+document.documentElement.scrollHeight -
+
+document.documentElement.clientHeight;
+
+const scrolled =
+
+(winScroll/height)*100;
+
+document.getElementById(
+"progressBar"
+).style.width =
+
+scrolled + "%";
+
+});
+
+loadArticle();
+
+</script>
+
+</body>
+
+</html>

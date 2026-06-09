@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ea580c">
+<title>शाखा पुस्तिका</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">
+        🚩 शाखा पुस्तिका
+    </div>
+
+    <nav class="nav-links">
+
+    <a href="reader.html?file=articles/vivekananda.json">
+        स्वामी विवेकानंद
+    </a>
+
+    <a href="reader.html?file=articles/subhashit.json">
+        सुभाषित
+    </a>
+
+    <a href="reader.html?file=articles/amrit-vachan.json">
+        अमृत वचन
+    </a>
+
+    <a href="reader.html?file=articles/geet.json">
+        गीत
+    </a>
+
+    <a href="reader.html?file=articles/prerak-prasang.json">
+        प्रेरक प्रसंग
+    </a>
+
+    <a href="reader.html?file=articles/charcha.json">
+        चर्चा
+    </a>
+
+    <a href="reader.html?file=articles/panch-parivartan.json">
+        पंच परिवर्तन
+    </a>
+
+    </nav>
+
+    <button id="themeBtn">
+        🌙
+    </button>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <img
+        src="images/hero.jpg"
+        class="hero-image"
+        alt="Hero Image"
+    >
+
+    <div class="hero-content">
+
+        <h1>शाखा पुस्तिका</h1>
+
+        <p>
+            राष्ट्र प्रथम • चरित्र निर्माण • संगठन
+        </p>
+
+        <button class="primary-btn">
+            नवीनतम अंक पढ़ें
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<section class="search-section">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="लेख, गीत, सुभाषित खोजें..."
+    >
+
+</section>
+
+
+<!-- CATEGORY CHIPS -->
+
+<section class="categories">
+
+    <button class="chip active">
+        सभी
+    </button>
+
+    <button class="chip">
+        विवेक
+    </button>
+
+    <button class="chip">
+        सुभाषित
+    </button>
+
+    <button class="chip">
+        अमृत वचन
+    </button>
+
+    <button class="chip">
+        गीत
+    </button>
+
+    <button class="chip">
+        प्रसंग
+    </button>
+
+    <button class="chip">
+        चर्चा
+    </button>
+
+</section>
+
+
+<!-- LATEST CONTENT -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>नवीनतम सामग्री</h2>
+
+        <a href="#">
+            सभी देखें
+        </a>
+
+    </div>
+
+    <div id="latestContainer" class="card-grid">
+
+    </div>
+
+</section>
+
+
+
+<!-- QUOTE OF THE DAY -->
+
+<section class="quote-section">
+
+    <div class="quote-card">
+
+        <span class="quote-mark">
+            "
+        </span>
+
+        <p id="dailyQuote">
+
+            उठो, जागो और लक्ष्य प्राप्ति तक मत रुको।
+
+        </p>
+
+        <h4>
+            - स्वामी विवेकानंद
+        </h4>
+
+    </div>
+
+</section>
+
+
+
+<!-- FEATURED 
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>विशेष लेख</h2>
+
+    </div>
+
+    <div id="featuredContainer" class="featured-grid">
+
+    </div>
+
+</section>
+
+
+
+GEET SECTION
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>लोकप्रिय गीत</h2>
+
+    </div>
+
+    <div id="songsContainer" class="card-grid">
+
+    </div>
+
+</section>
+
+
+
+ STATS -->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <h3 id="totalArticles">
+            0
+        </h3>
+
+        <p>लेख</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h3 id="totalSongs">
+            0
+        </h3>
+
+        <p>गीत</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h3 id="totalQuotes">
+            0
+        </h3>
+
+        <p>अमृत वचन</p>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <h2>
+            वंदे मातरम्
+        </h2>
+
+        <p>
+            शाखा पुस्तिका डिजिटल संस्करण
+        </p>
+
+    </div>
+
+    <div class="footer-links">
+
+        <a href="#">
+            संपर्क
+        </a>
+
+        <a href="#">
+            गोपनीयता नीति
+        </a>
+
+        <a href="#">
+            सहयोग
+        </a>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 शाखा पुस्तिका
+
+    </div>
+
+</footer>
+
+
+<!-- ARTICLE MODAL -->
+
+<div id="articleModal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closeModal">
+            ×
+        </span>
+
+        <h2 id="modalTitle">
+
+        </h2>
+
+        <div id="modalBody">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
