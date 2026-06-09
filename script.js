@@ -1,3 +1,30 @@
+// DEVELOPMENT MODE ONLY
+
+if ('serviceWorker' in navigator) {
+
+    navigator.serviceWorker.getRegistrations()
+    .then(registrations => {
+
+        for (const registration of registrations) {
+
+            registration.unregister();
+
+        }
+
+    });
+
+    caches.keys().then(names => {
+
+        names.forEach(name => {
+
+            caches.delete(name);
+
+        });
+
+    });
+
+}
+
 const latestContainer =
 document.getElementById("latestContainer");
 
