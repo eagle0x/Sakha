@@ -347,8 +347,8 @@ body{
 
 
 /* CARD */
-
 .card{
+    cursor:pointer;
 
     background:var(--card);
 
