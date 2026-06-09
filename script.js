@@ -153,19 +153,17 @@ function createCard(article){
                 ${article.description}
             </p>
 
-            <button
-            class="read-btn">
-                पूरा पढ़ें
-            </button>
 
         </div>
 
     `;
 
-    div.querySelector(".read-btn")
-    .addEventListener("click",()=>{
+    div.style.cursor = "pointer";
 
-        window.location.href = `article.html?id=${article.id}`;
+    div.addEventListener("click",()=>{
+
+    window.location.href =
+    `article.html?id=${article.id}`;
 
     });
 
