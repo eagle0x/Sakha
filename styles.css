@@ -84,6 +84,21 @@ body{
 
 }
 
+.menu-btn{
+
+    display:none;
+
+    border:none;
+    background:none;
+
+    font-size:1.8rem;
+
+    cursor:pointer;
+
+    color:var(--text);
+
+}
+
 .nav-links a{
 
     text-decoration:none;
