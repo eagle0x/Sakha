@@ -724,19 +724,29 @@ footer{
 
 }
 
-.back-btn:hover{
-
-    background:var(--primary);
-
-    color:white;
-
-    transform:translateX(-2px);
-
+/* Hide back button on desktop */
+.back-btn{
+    display:none;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
+
+    .back-btn{
+        display:flex;
+
+        align-items:center;
+        justify-content:center;
+
+        text-decoration:none;
+
+        color:var(--text);
+
+        font-size:1.4rem;
+
+        margin-right:12px;
+    }
 
     .navbar{
 
