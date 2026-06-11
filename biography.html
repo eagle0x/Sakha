@@ -121,11 +121,12 @@ fetch("biographies/people.json")
     "bioContent"
     ).innerHTML = `
 
-        <div class="card">
+        <div class="card bio-card">
 
             <img
             src="${person.image}"
-            alt="${person.name}">
+            alt="${person.name}"
+            class="bio-image">
 
             <div class="card-body">
 
