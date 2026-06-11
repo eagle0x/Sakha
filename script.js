@@ -39,7 +39,11 @@ document.getElementById("searchInput");
 
 const themeBtn =
 document.getElementById("themeBtn");
+const menuBtn =
+document.getElementById("menuBtn");
 
+const navLinks =
+document.getElementById("navLinks");
 const modal =
 document.getElementById("articleModal");
 
@@ -55,6 +59,19 @@ document.getElementById("closeModal");
 let allArticles = [];
 
 
+/* -------------------------
+   MOBILE MENU
+-------------------------- */
+
+menuBtn.addEventListener(
+"click",
+()=>{
+
+    navLinks.classList.toggle(
+    "show"
+    );
+
+});
 
 /* -------------------------
    DARK MODE
