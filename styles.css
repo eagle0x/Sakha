@@ -620,6 +620,31 @@ footer{
     text-align: center;
 }
 
+/* Biography Page */
+
+.bio-image{
+
+    width:100%;
+    max-width:400px;
+
+    height:auto;
+
+    display:block;
+
+    margin:0 auto 25px;
+
+    border-radius:20px;
+
+    object-fit:contain;
+}
+
+.bio-card{
+
+    max-width:900px;
+
+    margin:auto;
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
