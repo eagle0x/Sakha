@@ -353,17 +353,38 @@ function updateStats(data){
     data.length;
 
     document.getElementById(
+    "totalSubhashit"
+    ).innerText =
+    data.filter(
+    a => a.category === "सुभाषित"
+    ).length;
+
+    document.getElementById(
     "totalSongs"
     ).innerText =
     data.filter(
-    a=>a.category==="गीत"
+    a => a.category === "गीत"
     ).length;
 
     document.getElementById(
     "totalQuotes"
     ).innerText =
     data.filter(
-    a=>a.category==="अमृत वचन"
+    a => a.category === "अमृत वचन"
+    ).length;
+
+    document.getElementById(
+    "totalPrasang"
+    ).innerText =
+    data.filter(
+    a => a.category === "प्रेरक प्रसंग"
+    ).length;
+
+    document.getElementById(
+    "totalJiwani"
+    ).innerText =
+    data.filter(
+    a => a.category === "जीवनी"
     ).length;
 
 }
