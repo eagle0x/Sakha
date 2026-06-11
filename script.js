@@ -379,14 +379,6 @@ function updateStats(data){
     data.filter(
     a => a.category === "प्रेरक प्रसंग"
     ).length;
-
-    document.getElementById(
-    "totalJiwani"
-    ).innerText =
-    data.filter(
-    a => a.category === "जीवनी"
-    ).length;
-
 }
 
 
