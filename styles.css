@@ -686,6 +686,54 @@ footer{
 
 }
 
+/* Biography Navbar */
+
+.nav-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.back-btn{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    background:var(--bg);
+
+    border:1px solid var(--border);
+
+    border-radius:50%;
+
+    font-size:1.4rem;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:translateX(-2px);
+
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
