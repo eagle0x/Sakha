@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "name": "श्री गुरुजी",
+        "image": "images/guruji.jpg",
+        "description": "राष्ट्रीय स्वयंसेवक संघ के द्वितीय सरसंघचालक",
+        "file": "guruji.json"
+    },
+
+    {
+        "id": 2,
+        "name": "स्वामी विवेकानंद",
+        "image": "images/vivekananda.jpg",
+        "description": "युग प्रवर्तक संन्यासी एवं युवा प्रेरणा",
+        "file": "swamiji.json"
+    },
+
+    {
+        "id": 3,
+        "name": "नेताजी सुभाषचन्द्र बोस",
+        "image": "images/netaji.jpg",
+        "description": "आज़ाद हिन्द फौज के महानायक",
+        "file": "netaji.json"
+    },
+
+    {
+        "id": 4,
+        "name": "डॉ. ए. पी. जे. अब्दुल कलाम",
+        "image": "images/apj.jpg",
+        "description": "भारत रत्न एवं मिसाइल मैन",
+        "file": "apj.json"
+    }
+]
