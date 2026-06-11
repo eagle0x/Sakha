@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>जीवनी</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🚩 जीवनी
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="jiwani.html">
+            ← वापस
+        </a>
+
+    </nav>
+
+    <button id="themeBtn">
+        🌙
+    </button>
+
+</header>
+
+
+<section class="section">
+
+    <div id="bioContent">
+
+        लोड हो रहा है...
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* -------------------------
+   THEME
+-------------------------- */
+
+if(localStorage.getItem("theme")==="dark"){
+
+    document.body.classList.add("dark");
+
+}
+
+document.getElementById("themeBtn")
+.addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark")
+        ? "dark"
+        : "light"
+    );
+
+});
+
+
+/* -------------------------
+   BIOGRAPHY
+-------------------------- */
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+const id =
+params.get("id");
+
+
+fetch("biographies/people.json")
+
+.then(res => res.json())
+
+.then(data => {
+
+    const person =
+    data.find(
+    p => p.id == id
+    );
+
+    if(!person){
+
+        throw new Error(
+        "Person not found"
+        );
+
+    }
+
+    return fetch(
+    `biographies/${person.file}`
+    );
+
+})
+
+.then(res => res.json())
+
+.then(person => {
+
+    document.getElementById(
+    "bioContent"
+    ).innerHTML = `
+
+        <div class="card">
+
+            <img
+            src="${person.image}"
+            alt="${person.name}">
+
+            <div class="card-body">
+
+                <h1>
+                    ${person.name}
+                </h1>
+
+                <br>
+
+                <p>
+                    <strong>जन्म:</strong>
+                    ${person.birth}
+                </p>
+
+                <p>
+                    <strong>जन्मस्थान:</strong>
+                    ${person.birthPlace}
+                </p>
+
+                <p>
+                    <strong>देहावसान:</strong>
+                    ${person.death}
+                </p>
+
+                <br>
+
+                <h3>
+                    प्रमुख योगदान
+                </h3>
+
+                <ul>
+
+                    ${
+                        person.knownFor
+                        .map(item =>
+                        `<li>${item}</li>`)
+                        .join("")
+                    }
+
+                </ul>
+
+                <br>
+
+                <blockquote style="
+                    font-style:italic;
+                    border-left:4px solid var(--primary);
+                    padding-left:15px;
+                    margin:20px 0;
+                ">
+
+                    "${person.quote}"
+
+                </blockquote>
+
+                <h3>
+                    जीवन परिचय
+                </h3>
+
+                <p style="
+                    line-height:2;
+                    margin-top:15px;
+                ">
+
+                    ${person.content}
+
+                </p>
+
+                <br>
+
+                <h3>
+                    प्रेरक संदेश
+                </h3>
+
+                <p style="
+                    line-height:2;
+                ">
+
+                    ${person.message}
+
+                </p>
+
+            </div>
+
+        </div>
+
+    `;
+
+})
+
+.catch(() => {
+
+    document.getElementById(
+    "bioContent"
+    ).innerHTML = `
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <h2>
+                    जीवनी उपलब्ध नहीं है।
+                </h2>
+
+                <p>
+                    कृपया बाद में पुनः प्रयास करें।
+                </p>
+
+            </div>
+
+        </div>
+
+    `;
+
+});
+
+</script>
+
+</body>
+
+</html>
