@@ -4,6 +4,7 @@ const urlsToCache = [
 
     "/",
     "/articles/content.json"
+    "/videos/flag.mp4"
 
 ];
 
