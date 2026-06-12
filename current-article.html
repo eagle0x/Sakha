@@ -1,22 +1,32 @@
-<link rel="stylesheet" href="styles.css">
-<body>
+<!DOCTYPE html>
+<html lang="hi">
 
-<div id="progressBar" class="progress-bar"></div>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>वर्तमान मामले | शाखा पुस्तिका</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
 
 <header class="navbar">
 
-    <div style="display:flex;align-items:center;gap:12px;">
+    <div class="nav-left">
 
-        <a href="current-affairs.html"
-           class="article-back">
-
-            ←
-
+        <a href="current-affairs.html" class="back-btn">
+            <
         </a>
 
         <div class="logo">
-            🚩 शाखा पुस्तिका
-        </div>
+            🚩 वर्तमान मामले
+        </div>   
 
     </div>
 
@@ -26,30 +36,201 @@
 
 </header>
 
-<div class="reading-container">
+<section class="section">
 
-    <div id="articleContainer">
+    <div id="newsContent">
+
+        लोड हो रहा है...
 
     </div>
 
-    <section class="related">
+</section>
 
-        <h2>
-            संबंधित सामयिकी
-        </h2>
+
+<script>
+
+/* -------------------------
+   THEME
+-------------------------- */
+
+if(localStorage.getItem("theme")==="dark"){
+
+    document.body.classList.add("dark");
+
+}
+
+document.getElementById("themeBtn")
+.addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark")
+        ? "dark"
+        : "light"
+    );
+
+});
+
+
+/* -------------------------
+   current affairs
+-------------------------- */
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+const id =
+params.get("id");
+
+
+fetch("articles/current-affairs.json")
+
+.then(res => res.json())
+
+.then(data => {
+
+    const article =
+    data.find(
+        item => item.id == id
+    );
+
+    if(!article){
+
+        throw new Error(
+            "Article not found"
+        );
+
+    }
+
+    return article;
+
+})
+
+.then(res => res.json())
+
+.then(article => {
+
+    document.getElementById(
+"newsContent"
+).innerHTML = `
+
+<div class="card bio-card">
+
+    <img
+    src="${article.image}"
+    alt="${article.title}"
+    class="bio-image">
+
+    <div class="card-body">
+
+        <span class="chip active">
+
+            ${article.category}
+
+        </span>
+
+        <br><br>
+
+        <h1>
+
+            ${article.title}
+
+        </h1>
 
         <br>
 
-        <div
-        id="relatedNews"
-        class="related-grid">
+        <p>
+
+            📅 ${article.date}
+
+        </p>
+
+        <br>
+
+        <p style="
+            line-height:2;
+        ">
+
+            ${article.content}
+
+        </p>
+
+        <br>
+
+        <div class="article-actions">
+
+            <button
+            class="action-btn"
+            onclick="shareArticle()">
+
+                📤 शेयर
+
+            </button>
+
+            <button
+            class="action-btn"
+            onclick="window.print()">
+
+                🖨️ PDF
+
+            </button>
 
         </div>
 
-    </section>
+    </div>
 
 </div>
 
-<script src="current-article.js"></script>
+`;
+
+})
+function shareArticle(){
+
+    if(navigator.share){
+
+        navigator.share({
+
+            title: document.title,
+
+            url: window.location.href
+
+        });
+
+    }
+
+}
+.catch(() => {
+
+    document.getElementById(
+    "newsContent"
+    ).innerHTML = `
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <h2>
+                    वर्तमान मामला उपलब्ध नहीं है।
+                </h2>
+
+                <p>
+                    कृपया बाद में पुनः प्रयास करें।
+                </p>
+
+            </div>
+
+        </div>
+
+    `;
+
+});
+
+</script>
 
 </body>
+
+</html>
