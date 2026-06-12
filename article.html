@@ -26,21 +26,53 @@
 
 }
 
-.back-btn{
+.article-back{
 
-    display:inline-block;
-
-    margin-bottom:25px;
+    display:none;
 
     text-decoration:none;
 
-    color:white;
+    color:var(--text);
 
-    background:#ea580c;
+    font-size:1.4rem;
 
-    padding:10px 18px;
+    font-weight:600;
 
-    border-radius:10px;
+    line-height:1;
+
+}
+
+/* Related cards support dark mode */
+
+.related-card{
+
+    background:var(--card);
+
+    color:var(--text);
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+}
+
+.related-card-content p{
+
+    color:var(--muted);
+
+}
+
+/* Mobile only */
+
+@media(max-width:768px){
+
+    .article-back{
+
+        display:block;
+
+    }
 
 }
 
@@ -207,15 +239,31 @@ font-size:2rem;
 
 <div id="progressBar" class="progress-bar"></div>
 
+<header class="navbar">
+
+    <div style="display:flex;align-items:center;gap:12px;">
+
+        <a href="index.html" class="article-back">
+            ←
+        </a>
+
+        <div class="logo">
+            🚩 शाखा पुस्तिका
+        </div>
+
+    </div>
+
+    <button id="themeBtn">
+        🌙
+    </button>
+
+</header>
+
 <div class="reading-container">
 
-<a href="index.html" class="back-btn">
-← वापस जाएं
-</a>
+    <div id="articleContainer">
 
-<div id="articleContainer">
-
-</div>
+    </div>
 
 <section class="related">
 
@@ -236,7 +284,31 @@ class="related-grid">
 </div>
 
 <script>
+const themeBtn =
+document.getElementById("themeBtn");
 
+if(localStorage.getItem("theme")==="dark"){
+
+    document.body.classList.add("dark");
+
+}
+
+themeBtn.addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+
+        "theme",
+
+        document.body.classList.contains("dark")
+        ? "dark"
+        : "light"
+
+    );
+
+});
+    
 const params =
 new URLSearchParams(
 window.location.search
