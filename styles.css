@@ -144,16 +144,6 @@ body{
 
     overflow:hidden;
 
-}
-
-.hero{
-
-    position:relative;
-
-    height:550px;
-
-    overflow:hidden;
-
     display:flex;
 
     align-items:center;
@@ -162,31 +152,21 @@ body{
 
 }
 
-/* Floating Flag */
-
-.flag-bg{
+.hero-video{
 
     position:absolute;
 
-    inset:0;
+    top:0;
+    left:0;
 
-    background-image:
-    url("images/india-flag-bg.png");
+    width:100%;
+    height:100%;
 
-    background-repeat:no-repeat;
+    object-fit:cover;
 
-    background-position:center;
-
-    background-size:80%;
-
-    opacity:.18;
-
-    animation:
-    floatFlag 18s ease-in-out infinite;
+    z-index:0;
 
 }
-
-/* Dark Overlay */
 
 .hero-overlay{
 
@@ -196,9 +176,11 @@ body{
 
     background:
     linear-gradient(
-        rgba(0,0,0,.25),
-        rgba(0,0,0,.35)
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.60)
     );
+
+    z-index:1;
 
 }
 
@@ -206,90 +188,7 @@ body{
 
     position:relative;
 
-    z-index:10;
-
-    text-align:center;
-
-    color:white;
-
-    width:90%;
-
-}
-
-.hero-content h1{
-
-    font-size:4.5rem;
-
-    font-weight:700;
-
-    text-shadow:
-    0 5px 20px rgba(0,0,0,.5);
-
-}
-
-.hero-content p{
-
-    margin-top:15px;
-
-    font-size:1.3rem;
-
-    letter-spacing:1px;
-
-}
-
-/* Animation */
-
-@keyframes floatFlag{
-
-    0%{
-
-        transform:
-        scale(1)
-        translateY(0px);
-
-    }
-
-    50%{
-
-        transform:
-        scale(1.04)
-        translateY(-12px);
-
-    }
-
-    100%{
-
-        transform:
-        scale(1)
-        translateY(0px);
-
-    }
-
-}
-
-.hero-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    linear-gradient(
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.45)
-    );
-
-}
-
-.hero-content{
-
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    transform:
-    translate(-50%,-50%);
+    z-index:2;
 
     text-align:center;
 
@@ -305,16 +204,19 @@ body{
 
     margin-bottom:15px;
 
+    text-shadow:
+    0 4px 20px rgba(0,0,0,.7);
+
 }
 
 .hero-content p{
 
     font-size:1.2rem;
 
-    margin-bottom:25px;
+    text-shadow:
+    0 2px 10px rgba(0,0,0,.7);
 
 }
-
 .primary-btn{
 
     background:var(--primary);
@@ -939,6 +841,12 @@ footer{
     .hero-content h1{
 
         font-size:2.5rem;
+
+    }
+
+    .hero-content p{
+
+        font-size:1rem;
 
     }
 
