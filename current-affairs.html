@@ -221,6 +221,9 @@ document.getElementById("newsContainer");
 function render(data){
 
     container.innerHTML="";
+    data.sort(
+        (a,b)=> b.id - a.id
+    );
 
     data.forEach(item=>{
 
