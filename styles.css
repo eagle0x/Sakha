@@ -177,8 +177,8 @@ body{
 
     background:
     linear-gradient(
-        rgba(0,0,0,.60),
-        rgba(0,0,0,.75)
+        rgba(0,0,0,.30),
+        rgba(0,0,0,.45)
     );
 
     z-index:1;
