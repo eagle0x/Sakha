@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>सामयिकी | शाखा पुस्तिका</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+.current-container{
+    max-width:1200px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+.page-title{
+    margin-bottom:30px;
+}
+
+.page-title h1{
+    font-size:2.5rem;
+}
+
+.page-title p{
+    color:var(--muted);
+}
+
+.search-box{
+    margin-bottom:25px;
+}
+
+.search-box input{
+    width:100%;
+    padding:14px 18px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    font-size:1rem;
+}
+
+.category-chips{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.category-chips button{
+    border:none;
+    padding:10px 18px;
+    border-radius:999px;
+    cursor:pointer;
+    background:#e2e8f0;
+}
+
+.category-chips .active{
+    background:#ea580c;
+    color:white;
+}
+
+.news-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.news-card{
+    background:var(--card);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+}
+
+.news-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.news-content{
+    padding:18px;
+}
+
+.news-date{
+    color:var(--muted);
+    font-size:.9rem;
+    margin-bottom:10px;
+}
+
+.news-category{
+    display:inline-block;
+    background:#ea580c;
+    color:white;
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:12px;
+    font-size:.85rem;
+}
+
+.news-content h3{
+    margin-bottom:12px;
+}
+
+.news-content p{
+    color:var(--muted);
+}
+
+.read-btn{
+    margin-top:15px;
+    border:none;
+    background:#ea580c;
+    color:white;
+    padding:10px 16px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🚩 शाखा पुस्तिका
+    </div>
+
+    <button id="themeBtn">
+        🌙
+    </button>
+
+</header>
+
+<div class="current-container">
+
+    <div class="page-title">
+
+        <h1>📰 सामयिकी</h1>
+
+        <p>
+            इस सप्ताह की प्रमुख घटनाएँ एवं समसामयिक विषय
+        </p>
+
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="सामयिकी खोजें...">
+
+    </div>
+
+    <div class="category-chips">
+
+        <button class="active">सभी</button>
+
+        <button>राष्ट्रीय</button>
+
+        <button>अंतरराष्ट्रीय</button>
+
+        <button>खेल</button>
+
+        <button>विज्ञान</button>
+
+        <button>अर्थव्यवस्था</button>
+
+    </div>
+
+    <div
+        class="news-grid"
+        id="newsContainer">
+
+    </div>
+
+</div>
+
+<script>
+
+const sampleNews = [
+
+{
+    id:1,
+    category:"राष्ट्रीय",
+    title:"नई शिक्षा नीति पर चर्चा",
+    description:"देशभर में नई शिक्षा नीति को लेकर संवाद कार्यक्रम आयोजित किए गए।",
+    date:"12 जून 2026",
+    image:"images/current/education.jpg"
+},
+
+{
+    id:2,
+    category:"अंतरराष्ट्रीय",
+    title:"G20 सम्मेलन सम्पन्न",
+    description:"विश्व नेताओं ने आर्थिक सहयोग पर विचार किया।",
+    date:"11 जून 2026",
+    image:"images/current/g20.jpg"
+},
+
+{
+    id:3,
+    category:"विज्ञान",
+    title:"भारतीय वैज्ञानिकों की नई उपलब्धि",
+    description:"नवाचार और अनुसंधान के क्षेत्र में महत्वपूर्ण प्रगति।",
+    date:"10 जून 2026",
+    image:"images/current/science.jpg"
+}
+
+];
+
+const container =
+document.getElementById("newsContainer");
+
+function render(data){
+
+    container.innerHTML="";
+
+    data.forEach(item=>{
+
+        container.innerHTML += `
+
+        <div class="news-card">
+
+            <img src="${item.image}">
+
+            <div class="news-content">
+
+                <div class="news-date">
+                    📅 ${item.date}
+                </div>
+
+                <span class="news-category">
+                    ${item.category}
+                </span>
+
+                <h3>
+                    ${item.title}
+                </h3>
+
+                <p>
+                    ${item.description}
+                </p>
+
+                <button
+                    class="read-btn">
+
+                    पूरा पढ़ें
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+render(sampleNews);
+
+/* Theme */
+
+const themeBtn =
+document.getElementById("themeBtn");
+
+if(localStorage.getItem("theme")==="dark"){
+
+    document.body.classList.add("dark");
+
+}
+
+themeBtn.addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+
+        "theme",
+
+        document.body.classList.contains("dark")
+        ? "dark"
+        : "light"
+
+    );
+
+});
+
+</script>
+
+</body>
+</html>
