@@ -442,6 +442,31 @@ loadNews();
 const searchInput =
 document.getElementById("searchInput");
 
+const categoryAliases = {
+
+    "राष्ट्रीय":
+    "national india government politics",
+
+    "अंतरराष्ट्रीय":
+    "international world global foreign",
+
+    "खेल":
+    "sports game cricket football olympics",
+
+    "विज्ञान":
+    "science technology research innovation",
+
+    "अर्थव्यवस्था":
+    "economy finance business market",
+
+    "पर्यावरण":
+    "environment climate ecology",
+
+    "रक्षा":
+    "defence military army navy airforce"
+
+};
+
 searchInput.addEventListener(
 "input",
 function(){
@@ -449,36 +474,54 @@ function(){
     const q =
     this.value.toLowerCase();
 
-    const filtered = allNews.filter(item => {
+    const filtered =
+    allNews.filter(item=>{
 
-    const q = searchInput.value.toLowerCase();
+        const aliases =
 
-    return (
+            categoryAliases[
+                item.category
+            ] || "";
 
-        item.title.toLowerCase().includes(q)
+        return(
 
-        ||
+            item.title
+            .toLowerCase()
+            .includes(q)
 
-        item.description.toLowerCase().includes(q)
+            ||
 
-        ||
+            item.description
+            .toLowerCase()
+            .includes(q)
 
-        item.category.toLowerCase().includes(q)
+            ||
 
-        ||
+            item.category
+            .toLowerCase()
+            .includes(q)
 
-        (item.keywords || "")
-        .toLowerCase()
-        .includes(q)
+            ||
 
-    );
+            aliases
+            .toLowerCase()
+            .includes(q)
+
+            ||
+
+            (
+                item.keywords || ""
+            )
+            .toLowerCase()
+            .includes(q)
+
+        );
+
+    });
+
+    render(filtered);
 
 });
-
-render(filtered);
-
-});
-
 const chips =
 document.querySelectorAll(
 ".category-chips button"
