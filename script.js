@@ -284,30 +284,31 @@ function(){
     const q =
     this.value.toLowerCase();
 
-    const filtered =
-    allArticles.filter(item=>{
+    const filtered = articles.filter(article => {
 
-        return (
+    const q = query.toLowerCase();
 
-            item.title
+    return (
+
+        article.title.toLowerCase().includes(q)
+
+        ||
+
+        article.description.toLowerCase().includes(q)
+
+        ||
+
+        article.category.toLowerCase().includes(q)
+
+        ||
+
+        (article.keywords || "")
             .toLowerCase()
             .includes(q)
 
-            ||
+    );
 
-            item.description
-            .toLowerCase()
-            .includes(q)
-
-            ||
-
-            item.category
-            .toLowerCase()
-            .includes(q)
-
-        );
-
-    });
+});
 
     renderArticles(filtered);
 
