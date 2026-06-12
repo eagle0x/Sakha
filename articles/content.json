@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "उठो जागो और लक्ष्य प्राप्ति तक मत रुको",
-    "category": "विवेक",
+    "category": "सुभाषित",
     "featured": true,
     "image": "images/vivekananda.jpg",
     "description": "स्वामी विवेकानंद का प्रेरणादायक संदेश।",
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "title": "एक स्वयंसेवक की प्रेरक कहानी",
-    "category": "प्रसंग",
+    "category": "प्रेरक प्रसंग",
     "featured": false,
     "image": "images/prasang1.jpg",
     "description": "सेवा, समर्पण और राष्ट्रभक्ति की कहानी।",
@@ -77,25 +77,5 @@
     "image": "images/quote2.jpg",
     "description": "निस्वार्थ कर्म का संदेश।",
     "content": "मनुष्य का कर्तव्य है कि वह कर्म करे और फल की चिंता किए बिना समाज हित में कार्य करता रहे।"
-  },
-
-  {
-    "id": 9,
-    "title": "हे मातृभूमि",
-    "category": "गीत",
-    "featured": false,
-    "image": "images/song2.jpg",
-    "description": "भारत माता को समर्पित प्रेरणादायक गीत।",
-    "content": "हे मातृभूमि! तुझे प्रणाम..."
-  },
-
-  {
-    "id": 10,
-    "title": "युवा शक्ति",
-    "category": "विवेक",
-    "featured": true,
-    "image": "images/youth.jpg",
-    "description": "युवाओं के लिए स्वामी विवेकानंद के विचार।",
-    "content": "युवा राष्ट्र की शक्ति हैं। आत्मविश्वास, अनुशासन और सेवा की भावना से राष्ट्र को नई दिशा दी जा सकती है।"
   }
 ]
