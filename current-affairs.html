@@ -321,6 +321,8 @@
         <button>विज्ञान</button>
 
         <button>अर्थव्यवस्था</button>
+        
+        <button>पर्यावरण</button>
 
     </div>
 
@@ -447,28 +449,33 @@ function(){
     const q =
     this.value.toLowerCase();
 
-    const filtered =
-    alllNews.filter(item=>
+    const filtered = allNews.filter(item => {
 
-        item.title
-        .toLowerCase()
-        .includes(q)
+    const q = searchInput.value.toLowerCase();
 
-        ||
+    return (
 
-        item.description
-        .toLowerCase()
-        .includes(q)
+        item.title.toLowerCase().includes(q)
 
         ||
 
-        item.category
+        item.description.toLowerCase().includes(q)
+
+        ||
+
+        item.category.toLowerCase().includes(q)
+
+        ||
+
+        (item.keywords || "")
         .toLowerCase()
         .includes(q)
 
     );
 
-    render(filtered);
+});
+
+render(filtered);
 
 });
 
