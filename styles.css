@@ -140,7 +140,11 @@ body{
 
     position:relative;
 
-    height:500px;
+    height:70vh;
+
+    min-height:620px;
+
+    max-height:720px;
 
     overflow:hidden;
 
@@ -151,6 +155,7 @@ body{
     justify-content:center;
 
 }
+
 
 .hero-video{
 
@@ -176,8 +181,8 @@ body{
 
     background:
     linear-gradient(
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.60)
+        rgba(0,0,0,.60),
+        rgba(0,0,0,.75)
     );
 
     z-index:1;
