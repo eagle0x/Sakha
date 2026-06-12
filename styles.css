@@ -140,11 +140,11 @@ body{
 
     position:relative;
 
-    height:80vh;
+    height:75vh;
 
-    min-height:720px;
+    min-height:650px;
 
-    max-height:820px;
+    max-height:7500px;
 
     overflow:hidden;
 
