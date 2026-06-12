@@ -277,44 +277,75 @@ window.onclick = e=>{
    SEARCH
 -------------------------- */
 
-searchInput.addEventListener(
-"input",
-function(){
+const categoryAliases = {
 
-    const q =
-    this.value.toLowerCase();
+    "गीत":
+    "song geet prayer",
 
-    const filtered = articles.filter(article => {
+    "सुभाषित":
+    "subhashit sanskrit quote thought",
 
-    const q = query.toLowerCase();
+    "अमृत वचन":
+    "quote inspiration motivation",
 
-    return (
+    "प्रेरक प्रसंग":
+    "story incident inspiration",
 
-        article.title.toLowerCase().includes(q)
+};
 
-        ||
+searchInput.addEventListener("input",()=>{
 
-        article.description.toLowerCase().includes(q)
+    const query =
+    searchInput.value.toLowerCase();
 
-        ||
+    const filtered =
+    allArticles.filter(article=>{
 
-        article.category.toLowerCase().includes(q)
+        const aliases =
 
-        ||
+            categoryAliases[
+                article.category
+            ] || "";
 
-        (article.keywords || "")
+        return (
+
+            article.title
             .toLowerCase()
-            .includes(q)
+            .includes(query)
 
-    );
+            ||
 
-});
+            article.description
+            .toLowerCase()
+            .includes(query)
+
+            ||
+
+            article.category
+            .toLowerCase()
+            .includes(query)
+
+            ||
+
+            aliases
+            .toLowerCase()
+            .includes(query)
+
+            ||
+
+            (
+                article.keywords || ""
+            )
+            .toLowerCase()
+            .includes(query)
+
+        );
+
+    });
 
     renderArticles(filtered);
 
 });
-
-
 
 /* -------------------------
    FILTER CHIPS
