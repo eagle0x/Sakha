@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>सामयिकी | शाखा पुस्तिका</title>
+<title>वर्तमान मामले | शाखा पुस्तिका</title>
 
 <link rel="stylesheet" href="styles.css">
 
@@ -102,25 +102,119 @@
 }
 
 .news-grid{
+
     display:grid;
+
     grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
+    repeat(auto-fill, minmax(320px, 320px));
+
+    justify-content:center;
+
     gap:25px;
+
 }
 
 .news-card{
+
+    width:320px;
+
     background:var(--card);
+
     border-radius:18px;
+
     overflow:hidden;
+
     box-shadow:var(--shadow);
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+    transition:.3s;
+
 }
+
+.news-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* Image always on top */
 
 .news-card img{
+
     width:100%;
+
     height:200px;
+
     object-fit:cover;
+
+    display:block;
+
 }
 
+.news-content{
+
+    padding:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+}
+
+.news-date{
+
+    color:var(--muted);
+
+    font-size:.9rem;
+
+    margin-bottom:10px;
+
+}
+
+.news-category{
+
+    display:inline-block;
+
+    background:#ea580c;
+
+    color:white;
+
+    padding:5px 12px;
+
+    border-radius:999px;
+
+    margin-bottom:12px;
+
+    font-size:.85rem;
+
+    width:fit-content;
+
+}
+
+.news-content h3{
+
+    margin-bottom:12px;
+
+    line-height:1.5;
+
+}
+
+.news-content p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+    flex:1;
+
+}
 .news-content{
     padding:18px;
 }
@@ -157,6 +251,22 @@
     padding:10px 16px;
     border-radius:10px;
     cursor:pointer;
+}
+
+@media(max-width:768px){
+
+    .news-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .news-card{
+
+        width:100%;
+
+    }
+
 }
 
 </style>
