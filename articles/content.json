@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 7,
     "title": "उठो जागो और लक्ष्य प्राप्ति तक मत रुको",
     "category": "सुभाषित",
     "featured": true,
@@ -10,7 +10,7 @@
   },
 
   {
-    "id": 2,
+    "id": 6,
     "title": "सत्यं ब्रूयात् प्रियं ब्रूयात्",
     "category": "सुभाषित",
     "featured": false,
@@ -20,9 +20,10 @@
   },
 
   {
-    "id": 3,
+    "id": 5,
     "title": "आज का अमृत वचन",
     "category": "अमृत वचन",
+     "keywords": "quote motivation",
     "featured": true,
     "image": "images/quote1.jpg",
     "description": "महापुरुषों का प्रेरणादायक विचार।",
@@ -33,6 +34,7 @@
     "id": 4,
     "title": "वंदे मातरम्",
     "category": "गीत",
+     "keywords": "music song",
     "featured": true,
     "image": "images/song1.jpg",
     "description": "राष्ट्रभक्ति का अमर गीत।",
@@ -40,9 +42,10 @@
   },
 
   {
-    "id": 5,
+    "id": 3,
     "title": "एक स्वयंसेवक की प्रेरक कहानी",
     "category": "प्रेरक प्रसंग",
+     "keywords": "story motivation",
     "featured": false,
     "image": "images/prasang1.jpg",
     "description": "सेवा, समर्पण और राष्ट्रभक्ति की कहानी।",
@@ -50,8 +53,9 @@
   },
 
   {
-    "id": 6,
+    "id": 2,
     "title": "चरित्र निर्माण का महत्व",
+     "keywords": "discussion",
     "category": "चर्चा",
     "featured": false,
     "image": "images/charcha1.jpg",
@@ -60,19 +64,10 @@
   },
 
   {
-    "id": 7,
-    "title": "पंच परिवर्तन",
-    "category": "चर्चा",
-    "featured": true,
-    "image": "images/panchparivartan.jpg",
-    "description": "समाज परिवर्तन के पांच प्रमुख आयाम।",
-    "content": "स्व का बोध, कुटुंब प्रबोधन, सामाजिक समरसता, नागरिक कर्तव्य और पर्यावरण संरक्षण।"
-  },
-
-  {
-    "id": 8,
+    "id": 1,
     "title": "कर्म ही पूजा है",
     "category": "अमृत वचन",
+    "keywords": "quote motivation",
     "featured": false,
     "image": "images/quote2.jpg",
     "description": "निस्वार्थ कर्म का संदेश।",
