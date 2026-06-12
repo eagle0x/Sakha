@@ -224,36 +224,7 @@
 
 <script>
 
-const sampleNews = [
 
-{
-    id:1,
-    category:"राष्ट्रीय",
-    title:"नई शिक्षा नीति पर चर्चा",
-    description:"देशभर में नई शिक्षा नीति को लेकर संवाद कार्यक्रम आयोजित किए गए।",
-    date:"12 जून 2026",
-    image:"images/current/education.jpg"
-},
-
-{
-    id:2,
-    category:"अंतरराष्ट्रीय",
-    title:"G20 सम्मेलन सम्पन्न",
-    description:"विश्व नेताओं ने आर्थिक सहयोग पर विचार किया।",
-    date:"11 जून 2026",
-    image:"images/current/g20.jpg"
-},
-
-{
-    id:3,
-    category:"विज्ञान",
-    title:"भारतीय वैज्ञानिकों की नई उपलब्धि",
-    description:"नवाचार और अनुसंधान के क्षेत्र में महत्वपूर्ण प्रगति।",
-    date:"10 जून 2026",
-    image:"images/current/science.jpg"
-}
-
-];
 
 const container =
 document.getElementById("newsContainer");
@@ -326,8 +297,36 @@ function render(data){
 
 }
 
-render(sampleNews);
+let allNews = [];
 
+async function loadNews(){
+
+    try{
+
+        const res =
+        await fetch(
+            "articles/current-affairs.json"
+        );
+
+        allNews =
+        await res.json();
+
+        render(allNews);
+
+    }
+    catch(err){
+
+        console.error(err);
+
+        container.innerHTML =
+
+        "<p>सामयिकी लोड नहीं हो सकी।</p>";
+
+    }
+
+}
+
+loadNews();
 const searchInput =
 document.getElementById("searchInput");
 
@@ -339,7 +338,7 @@ function(){
     this.value.toLowerCase();
 
     const filtered =
-    sampleNews.filter(item=>
+    alllNews.filter(item=>
 
         item.title
         .toLowerCase()
@@ -389,7 +388,7 @@ chips.forEach(chip=>{
 
         if(category==="सभी"){
 
-            render(sampleNews);
+            render(allNews);
 
             return;
 
@@ -397,7 +396,7 @@ chips.forEach(chip=>{
 
         render(
 
-            sampleNews.filter(
+            allNews.filter(
                 item=>
 
                 item.category===category
