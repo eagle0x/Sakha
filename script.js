@@ -230,15 +230,8 @@ function openArticle(article){
     modalBody.innerHTML = `
 
         <img
-            src="${article.image}"
-            alt="${article.title}"
-            style="
-                width:100%;
-                max-height:400px;
-                object-fit:cover;
-                border-radius:15px;
-                margin-bottom:20px;
-            ">
+    src="${article.image}"
+    alt="${article.title}">
 
         <p style="
             color:var(--muted);
