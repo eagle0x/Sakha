@@ -47,7 +47,11 @@ body{
 
 
 /* NAVBAR */
+/* Hide "मुख्य पृष्ठ" only on index */
 
+body.home-page .nav-home{
+    display:none;
+}
 .navbar{
 
     position:sticky;
