@@ -24,7 +24,6 @@ if ('serviceWorker' in navigator) {
     });
 
 }
-
 const latestContainer =
 document.getElementById("latestContainer");
 
@@ -204,10 +203,9 @@ function createCard(article){
 
     div.style.cursor = "pointer";
 
-    div.addEventListener("click",()=>{
+div.addEventListener("click",()=>{
 
-    window.location.href =
-    `article.html?id=${article.id}`;
+    openArticle(article);
 
     });
 
@@ -225,28 +223,42 @@ function openArticle(article){
 
     modal.style.display = "block";
 
-    modalTitle.innerText =
-    article.title;
+    document.body.style.overflow = "hidden";
+
+    modalTitle.innerText = article.title;
 
     modalBody.innerHTML = `
 
         <img
-        src="${article.image}"
-        style="
-        width:100%;
-        border-radius:15px;
-        margin-bottom:20px;">
+            src="${article.image}"
+            alt="${article.title}"
+            style="
+                width:100%;
+                max-height:400px;
+                object-fit:cover;
+                border-radius:15px;
+                margin-bottom:20px;
+            ">
 
         <p style="
-        line-height:2;
-        font-size:1.05rem;">
+            color:var(--muted);
+            margin-bottom:15px;
+        ">
 
-        ${article.content}
+            ${article.category}
 
         </p>
 
-    `;
+        <div style="
+            line-height:2;
+            font-size:1.05rem;
+        ">
 
+            ${article.content}
+
+        </div>
+
+    `;
 }
 
 
@@ -259,6 +271,8 @@ closeModal.onclick = ()=>{
 
     modal.style.display = "none";
 
+    document.body.style.overflow = "";
+
 };
 
 window.onclick = e=>{
@@ -266,6 +280,8 @@ window.onclick = e=>{
     if(e.target === modal){
 
         modal.style.display = "none";
+
+        document.body.style.overflow = "";
 
     }
 
