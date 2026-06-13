@@ -57,6 +57,30 @@ document.getElementById("closeModal");
 
 let allArticles = [];
 
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'hi',
+        includedLanguages: 'en,hi,ta,te,bn,mr,gu,kn,ml,pa,or',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+window.addEventListener("load", () => {
+
+    if(!localStorage.getItem("translatePromptShown")){
+
+        document.getElementById("translatePopup").style.display = "block";
+
+        localStorage.setItem("translatePromptShown","true");
+    }
+
+});
+
+document.getElementById("closeTranslate")
+.addEventListener("click", () => {
+
+    document.getElementById("translatePopup").style.display = "none";
+
+});
 
 /* -------------------------
    MOBILE MENU
