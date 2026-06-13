@@ -57,53 +57,6 @@ document.getElementById("closeModal");
 
 let allArticles = [];
 
-const langBtn = document.getElementById("langBtn");
-const langMenu = document.getElementById("langMenu");
-
-langBtn?.addEventListener("click",(e)=>{
-
-    e.stopPropagation();
-
-    langMenu.classList.toggle("show");
-
-});
-
-document.addEventListener("click",(e)=>{
-
-    if(
-        langMenu &&
-        !langMenu.contains(e.target) &&
-        !langBtn?.contains(e.target)
-    ){
-        langMenu.classList.remove("show");
-    }
-
-});
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'hi',
-        includedLanguages: 'en,hi,ta,te,bn,mr,gu,kn,ml,pa,or',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-}
-window.addEventListener("load", () => {
-
-    if(!localStorage.getItem("translatePromptShown")){
-
-        document.getElementById("translatePopup").style.display = "block";
-
-        localStorage.setItem("translatePromptShown","true");
-    }
-
-});
-
-document.getElementById("closeTranslate")
-.addEventListener("click", () => {
-
-    document.getElementById("translatePopup").style.display = "none";
-
-});
-
 /* -------------------------
    MOBILE MENU
 -------------------------- */
