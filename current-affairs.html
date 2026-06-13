@@ -267,6 +267,65 @@
     line-height:1;
 }
 
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:9999;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.current-modal{
+    background:var(--card);
+    color:var(--text);
+    width:95%;
+    max-width:900px;
+    max-height:90vh;
+    overflow-y:auto;
+    border-radius:20px;
+    padding:30px;
+    position:relative;
+}
+
+.close-btn{
+    position:absolute;
+    right:25px;
+    top:20px;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+.modal-image{
+    width:100%;
+    max-height:450px;
+    object-fit:contain;
+    border-radius:16px;
+    margin-bottom:25px;
+}
+
+.modal-date{
+    color:var(--muted);
+    margin:15px 0;
+}
+
+.modal-body{
+    line-height:2;
+}
+
+.modal-actions{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+    
 @media(max-width:768px){
 
     .back-btn{
@@ -294,7 +353,6 @@
 </style>
 
 </head>
-
 <body>
 
 <header class="navbar">
@@ -395,43 +453,43 @@ function render(data){
 
     data.forEach(item=>{
 
-        container.innerHTML += `
+       container.innerHTML += `
 
-        <a
-        href="current-article.html?id=${item.id}"
-        style="text-decoration:none;color:inherit">
+<div class="news-card">
 
-        <div class="news-card">
+    <img src="${item.image}">
 
-            <img src="${item.image}">
+    <div class="news-content">
 
-            <div class="news-content">
-
-                <div class="news-date">
-                    📅 ${item.date}
-                </div>
-
-                <span class="news-category">
-                    ${item.category}
-                </span>
-
-                <h3>
-                    ${item.title}
-                </h3>
-
-                <p>
-                    ${item.description}
-                </p>
-
-            </div>
-
+        <div class="news-date">
+            📅 ${item.date}
         </div>
 
-    </a>
+        <span class="news-category">
+            ${item.category}
+        </span>
 
-        `;
+        <h3>
+            ${item.title}
+        </h3>
 
-    });
+        <p>
+            ${item.description}
+        </p>
+
+        <button
+            class="read-btn"
+            onclick="openNews(${item.id})">
+
+            और पढ़ें
+
+        </button>
+
+    </div>
+
+</div>
+
+`;
 
 }
 
@@ -596,6 +654,107 @@ chips.forEach(chip=>{
 
 });
 
+function openNews(id){
+
+    const article = allNews.find(
+        item => item.id == id
+    );
+
+    if(!article) return;
+
+    document.getElementById("modalBody").innerHTML = `
+
+        <img
+            src="${article.image}"
+            class="modal-image">
+
+        <span class="news-category">
+
+            ${article.category}
+
+        </span>
+
+        <h2 style="margin-top:20px;">
+
+            ${article.title}
+
+        </h2>
+
+        <div class="modal-date">
+
+            📅 ${article.date}
+
+        </div>
+
+        <div class="modal-body">
+
+            ${article.content}
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button
+                class="read-btn"
+                onclick="shareNews()">
+
+                📤 शेयर
+
+            </button>
+
+            <button
+                class="read-btn"
+                onclick="window.print()">
+
+                🖨️ PDF
+
+            </button>
+
+        </div>
+
+    `;
+
+    document
+        .getElementById("newsModal")
+        .classList.add("show");
+}
+
+function shareNews(){
+
+    const text =
+    document.querySelector("#modalBody h2")?.innerText || "";
+
+    if(navigator.share){
+
+        navigator.share({
+            title:text,
+            text:text
+        });
+
+    }
+}
+
+document.getElementById("closeModal")
+.addEventListener("click",()=>{
+
+    document
+    .getElementById("newsModal")
+    .classList.remove("show");
+
+});
+
+window.addEventListener("click",(e)=>{
+
+    if(e.target.id==="newsModal"){
+
+        document
+        .getElementById("newsModal")
+        .classList.remove("show");
+
+    }
+
+});
+
 /* Theme */
 
 const themeBtn =
@@ -625,5 +784,22 @@ themeBtn.addEventListener("click",()=>{
 
 </script>
 
+<!-- Current Affairs Modal -->
+
+<div id="newsModal" class="modal">
+
+    <div class="modal-content current-modal">
+
+        <span id="closeModal" class="close-btn">
+            ×
+        </span>
+
+        <div id="modalBody">
+
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
