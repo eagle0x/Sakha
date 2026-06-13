@@ -417,6 +417,23 @@
     </div>
 
 </div>
+<!-- Current Affairs Modal -->
+
+<div id="newsModal" class="modal">
+
+    <div class="modal-content current-modal">
+
+        <span id="closeModal" class="close-btn">
+            ×
+        </span>
+
+        <div id="modalBody">
+
+        </div>
+
+    </div>
+
+</div>
 
 <script>
 
@@ -736,12 +753,16 @@ function shareNews(){
     }
 }
 
-document.getElementById("closeModal")
-.addEventListener("click",()=>{
+window.addEventListener("DOMContentLoaded",()=>{
 
-    document
-    .getElementById("newsModal")
-    .classList.remove("show");
+    document.getElementById("closeModal")
+    .addEventListener("click",()=>{
+
+        document
+        .getElementById("newsModal")
+        .classList.remove("show");
+
+    });
 
 });
 
@@ -756,7 +777,17 @@ window.addEventListener("click",(e)=>{
     }
 
 });
+document.addEventListener("keydown",(e)=>{
 
+    if(e.key==="Escape"){
+
+        document
+        .getElementById("newsModal")
+        .classList.remove("show");
+
+    }
+
+});
 /* Theme */
 
 const themeBtn =
@@ -786,22 +817,5 @@ themeBtn.addEventListener("click",()=>{
 
 </script>
 
-<!-- Current Affairs Modal -->
-
-<div id="newsModal" class="modal">
-
-    <div class="modal-content current-modal">
-
-        <span id="closeModal" class="close-btn">
-            ×
-        </span>
-
-        <div id="modalBody">
-
-        </div>
-
-    </div>
-
-</div>
 </body>
 </html>
