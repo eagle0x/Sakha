@@ -102,16 +102,29 @@ body{
 .nav-links a{
 
     text-decoration:none;
-
     color:var(--text);
 
     font-weight:500;
+
+    padding:10px 14px;
+
+    border-radius:10px;
+
+    transition:.25s;
 
 }
 
 .nav-links a:hover{
 
-    color:var(--primary);
+    background:var(--bg);
+
+}
+
+.nav-links a.active{
+
+    background:var(--primary);
+
+    color:white;
 
 }
 
@@ -161,19 +174,7 @@ body{
 
 }
 
-/* ACTIVE NAV LINK */
 
-.nav-links a.active{
-
-    background:var(--primary);
-
-    color:white;
-
-    padding:10px 14px;
-
-    border-radius:10px;
-
-}
 
 /* MOBILE */
 
