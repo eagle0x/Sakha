@@ -179,36 +179,33 @@ body.home-page .nav-home{
 }
 .modal-content{
 
-    background: var(--card);
-    color: var(--text);
+    width:min(800px,92%);
+    max-height:85vh;
 
-    width: min(700px, 92%);
-    max-height: 85vh;
+    overflow-y:auto;
 
-    overflow-y: auto;
+    margin:40px auto;
 
-    margin: 40px auto;
+    padding:30px;
 
-    padding: 28px;
+    border-radius:24px;
 
-    border-radius: 24px;
-
-    position: relative;
+    position:relative;
 }
 
 .modal-content img{
 
-    width: 100%;
+    display:block;
 
-    max-height: 320px;
+    max-width:100%;
+    max-height:50vh;
 
-    object-fit: cover;
+    width:auto;
+    height:auto;
 
-    border-radius: 18px;
+    margin:20px auto;
 
-    display: block;
-
-    margin: 20px 0;
+    border-radius:18px;
 }
 
 #closeModal{
