@@ -1,40 +1,232 @@
-<section class="panch-section">
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="section-heading">
+<title>पंच परिवर्तन | शाखा पुस्तिका</title>
 
-        <h1>पंच परिवर्तन</h1>
+<link rel="icon" type="image/png" href="images/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+.panch-container{
+    max-width:1200px;
+    margin:50px auto;
+    padding:0 20px;
+}
+
+.page-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.page-header h1{
+    font-size:2.7rem;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.page-header p{
+    color:var(--muted);
+    font-size:1.1rem;
+}
+
+.panch-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.panch-card{
+    background:var(--card);
+    border-radius:20px;
+    padding:28px;
+    box-shadow:var(--shadow);
+    border:1px solid var(--border);
+    transition:.3s;
+}
+
+.panch-card:hover{
+    transform:translateY(-5px);
+}
+
+.panch-top{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.panch-number{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:700;
+    font-size:1.2rem;
+}
+
+.panch-title{
+    color:var(--primary);
+    font-size:1.2rem;
+    font-weight:700;
+}
+
+.panch-card p{
+    line-height:1.9;
+    color:var(--text);
+}
+
+.importance-box{
+    margin-top:50px;
+
+    background:#f8f3e6;
+
+    border-radius:20px;
+
+    padding:50px 35px;
+
+    text-align:center;
+
+    border:1px solid #eadfc2;
+}
+
+body.dark .importance-box{
+    background:#243040;
+    border-color:var(--border);
+}
+
+.importance-box h2{
+    color:var(--primary);
+    margin-bottom:30px;
+}
+
+.importance-box p{
+    line-height:2.1;
+    font-size:1.05rem;
+}
+
+.vande{
+    text-align:center;
+    margin:70px 0 20px;
+}
+
+.vande h1{
+    font-size:4rem;
+    color:var(--primary);
+}
+
+@media(max-width:768px){
+
+    .page-header h1{
+        font-size:2.2rem;
+    }
+
+    .vande h1{
+        font-size:2.8rem;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <button id="menuBtn" class="menu-btn">
+        ☰
+    </button>
+
+    <div class="logo">
+        🚩 शाखा पुस्तिका
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">
+            मुख्य पृष्ठ
+        </a>
+
+        <a href="vimarsh.html">
+            विमर्श के विषय
+        </a>
+
+        <a href="activities.html">
+            गतिविधियां
+        </a>
+
+        <a href="current-affairs.html">
+            वर्तमान मामले
+        </a>
+
+        <a href="jiwani.html">
+            जीवनी
+        </a>
+
+        <a href="panch-parivartan.html" class="active">
+            पंच परिवर्तन
+        </a>
+
+    </nav>
+
+    <button id="themeBtn">
+        🌙
+    </button>
+
+</header>
+
+
+<div class="panch-container">
+
+    <div class="page-header">
+
+        <h1>
+            पंच परिवर्तन
+        </h1>
 
         <p>
-            व्यक्ति से राष्ट्र निर्माण तक की पाँच आवश्यक दिशाएँ
+            व्यक्ति और समाज के पाँच आवश्यक परिवर्तन
         </p>
 
     </div>
 
-    <div class="timeline">
-
-        <div class="dot active">1</div>
-        <span></span>
-
-        <div class="dot">2</div>
-        <span></span>
-
-        <div class="dot">3</div>
-        <span></span>
-
-        <div class="dot">4</div>
-        <span></span>
-
-        <div class="dot">5</div>
-
-    </div>
 
     <div class="panch-grid">
 
         <div class="panch-card">
 
-            <div class="number">1</div>
+            <div class="panch-top">
 
-            <h3>स्व का बोध</h3>
+                <div class="panch-number">
+                    1
+                </div>
+
+                <div class="panch-title">
+                    स्व का बोध
+                </div>
+
+            </div>
 
             <p>
                 अपनी पहचान, संस्कृति और मूल्यों की समझ विकसित करना।
@@ -42,74 +234,180 @@
 
         </div>
 
+
         <div class="panch-card">
 
-            <div class="number">2</div>
+            <div class="panch-top">
 
-            <h3>नागरिक कर्तव्य</h3>
+                <div class="panch-number">
+                    2
+                </div>
+
+                <div class="panch-title">
+                    नागरिक कर्तव्य
+                </div>
+
+            </div>
 
             <p>
-                राष्ट्र के प्रति अपने दायित्वों को समझना और निभाना।
+                राष्ट्र के प्रति अपने दायित्वों को समझना और उनका निष्ठापूर्वक निर्वहन करना।
             </p>
 
         </div>
 
+
         <div class="panch-card">
 
-            <div class="number">3</div>
+            <div class="panch-top">
 
-            <h3>पर्यावरण</h3>
+                <div class="panch-number">
+                    3
+                </div>
+
+                <div class="panch-title">
+                    पर्यावरण
+                </div>
+
+            </div>
 
             <p>
-                प्रकृति संरक्षण एवं स्वच्छ जीवन शैली अपनाना।
+                प्रकृति के संरक्षण और पर्यावरण की सुरक्षा के लिए सक्रिय प्रयास करना।
             </p>
 
         </div>
 
+
         <div class="panch-card">
 
-            <div class="number">4</div>
+            <div class="panch-top">
 
-            <h3>सामाजिक समरसता</h3>
+                <div class="panch-number">
+                    4
+                </div>
+
+                <div class="panch-title">
+                    सामाजिक समरसता
+                </div>
+
+            </div>
 
             <p>
-                समाज में एकता, सद्भाव और भाईचारे को बढ़ावा देना।
+                समाज में एकता, भाईचारा और सद्भावना का विकास करना।
             </p>
 
         </div>
 
+
         <div class="panch-card">
 
-            <div class="number">5</div>
+            <div class="panch-top">
 
-            <h3>कुटुंब प्रबोधन</h3>
+                <div class="panch-number">
+                    5
+                </div>
+
+                <div class="panch-title">
+                    कुटुंब प्रबोधन
+                </div>
+
+            </div>
 
             <p>
-                परिवार व्यवस्था और संस्कारों को सुदृढ़ बनाना।
+                पारिवारिक मूल्यों को मजबूत बनाना और संस्कारों का संचार करना।
             </p>
 
         </div>
 
     </div>
 
+
     <div class="importance-box">
 
-        <h2>परिवर्तन का महत्व</h2>
+        <h2>
+            परिवर्तन का महत्व
+        </h2>
 
         <p>
             ये पाँच परिवर्तन व्यक्ति के संपूर्ण विकास के लिए आवश्यक हैं।
-            इनके माध्यम से हम केवल अपना कल्याण नहीं करते,
+            इनके माध्यम से हम न केवल अपना कल्याण करते हैं,
             बल्कि समाज और राष्ट्र के उत्थान में भी योगदान देते हैं।
             प्रत्येक व्यक्ति को इन पाँच क्षेत्रों में निरंतर सुधार
-            के लिए प्रयत्नशील रहना चाहिए।
+            और सकारात्मक परिवर्तन का प्रयास करना चाहिए।
         </p>
 
     </div>
 
-    <div class="ending-quote">
 
-        "वन्दे मातरम्"
+    <div class="vande">
+
+        <h1>
+            "वंदे मातरम्"
+        </h1>
 
     </div>
 
-</section>
+</div>
+
+
+<footer>
+
+    <div class="footer-top">
+
+        <h2>
+            शाखा पुस्तिका
+        </h2>
+
+        <p>
+            शाखा पुस्तिका डिजिटल संस्करण
+        </p>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 शाखा पुस्तिका
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* Mobile Menu */
+
+document.getElementById("menuBtn")
+.addEventListener("click",()=>{
+
+    document.getElementById("navLinks")
+    .classList.toggle("show");
+
+});
+
+
+/* Theme */
+
+if(localStorage.getItem("theme")==="dark"){
+
+    document.body.classList.add("dark");
+
+}
+
+document.getElementById("themeBtn")
+.addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark")
+        ? "dark"
+        : "light"
+    );
+
+});
+
+</script>
+
+</body>
+</html>
