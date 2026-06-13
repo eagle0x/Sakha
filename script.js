@@ -57,6 +57,28 @@ document.getElementById("closeModal");
 
 let allArticles = [];
 
+const langBtn = document.getElementById("langBtn");
+const langMenu = document.getElementById("langMenu");
+
+langBtn?.addEventListener("click",(e)=>{
+
+    e.stopPropagation();
+
+    langMenu.classList.toggle("show");
+
+});
+
+document.addEventListener("click",(e)=>{
+
+    if(
+        langMenu &&
+        !langMenu.contains(e.target) &&
+        !langBtn?.contains(e.target)
+    ){
+        langMenu.classList.remove("show");
+    }
+
+});
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
         pageLanguage: 'hi',
