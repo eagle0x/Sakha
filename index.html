@@ -337,22 +337,24 @@ GEET SECTION
 
 </div>
 
-<div id="translatePopup" class="modal">
-    <div class="modal-content" style="max-width:400px;text-align:center;">
+<div id="google_translate_element" style="display:none;"></div>
 
-        <h2>🌐 Choose Language</h2>
+<script>
+function googleTranslateElementInit() {
 
-        <div id="google_translate_element"></div>
+    new google.translate.TranslateElement({
 
-        <br>
+        pageLanguage: 'hi',
 
-        <button id="closeTranslate" class="primary-btn">
-            Not now
-        </button>
+        includedLanguages: 'hi,en',
 
-    </div>
-</div>
-<script src="script.js"></script>
+        autoDisplay: false
+
+    }, 'google_translate_element');
+
+}
+</script>
+
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
