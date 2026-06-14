@@ -73,41 +73,59 @@ menuBtn.addEventListener(
 /* -------------------------
    LANG BUTTON
 -------------------------- */
-const langBtn =
-document.getElementById("langBtn");
+const langBtn = document.getElementById("langBtn");
 
-let currentLang =
-localStorage.getItem("language") || "hi";
+if (langBtn) {
 
-updateLangButton();
+    langBtn.addEventListener("click", () => {
 
-langBtn?.addEventListener("click",()=>{
+        const combo = document.querySelector(".goog-te-combo");
 
-    currentLang =
-    currentLang === "hi"
-    ? "en"
-    : "hi";
+        if (!combo) {
+            alert("Translator is still loading...");
+            return;
+        }
 
-    localStorage.setItem(
-        "language",
-        currentLang
-    );
+        const current =
+            localStorage.getItem("language") || "hi";
 
-    updateLangButton();
+        const next =
+            current === "hi" ? "en" : "hi";
 
-    translatePage(currentLang);
+        combo.value = next;
 
-});
+        combo.dispatchEvent(
+            new Event("change")
+        );
+
+        localStorage.setItem(
+            "language",
+            next
+        );
+
+        updateLangButton();
+
+    });
+
+}
 
 function updateLangButton(){
 
+    const langBtn =
+    document.getElementById("langBtn");
+
     if(!langBtn) return;
 
+    const lang =
+    localStorage.getItem("language") || "hi";
+
     langBtn.textContent =
-    currentLang === "hi"
-    ? "EN"
-    : "हि";
+        lang === "hi"
+        ? "EN"
+        : "हि";
 }
+
+updateLangButton();
 /* -------------------------
    DARK MODE
 -------------------------- */
