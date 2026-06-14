@@ -99,13 +99,19 @@ langBtn.addEventListener("click",()=>{
 
     }else{
 
-        localStorage.setItem(
-            "language",
-            "hi"
-        );
+    localStorage.setItem("language","hi");
 
-        location.reload();   // restores original Hindi
-    }
+    document.cookie =
+        "googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+
+    document.cookie =
+        "googtrans=;domain=" +
+        window.location.hostname +
+        ";path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+
+    location.reload();
+
+}
 
 });
 
