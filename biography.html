@@ -115,7 +115,7 @@ fetch("biographies/people.json")
 .then(res => res.json())
 
 .then(person => {
-
+console.log(person);
     document.getElementById(
     "bioContent"
     ).innerHTML = `
