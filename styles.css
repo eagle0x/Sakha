@@ -159,25 +159,35 @@ body.home-page .nav-home{
     color:white;
 
 }
+.nav-actions{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
 .langBtn{
 
-    border:none;
+    border: none;
 
-    background:var(--primary);
+    background: var(--primary);
 
-    color:white;
+    color: white;
 
-    width:42px;
-    height:42px;
+    width: 42px;
+    height: 42px;
 
-    border-radius:50%;
+    border-radius: 50%;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    font-size:0.8rem;
+    font-size: 0.65rem;
+    font-weight: 600;
 
-    font-weight:600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    flex-shrink: 0;
 }
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
@@ -1077,6 +1087,9 @@ footer{
 
         padding:25px;
 
+    }
+    .nav-actions{
+        gap: 8px;
     }
 
 }
