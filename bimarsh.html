@@ -1,0 +1,204 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>विमर्श के विषय</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <button id="menuBtn" class="menu-btn">
+        ☰
+    </button>
+
+    <div class="logo">
+
+        <span class="logo-emoji">
+            🚩
+        </span>
+
+        <div class="logo-text">
+
+            <div class="logo-main">
+                ई-शाखा पुस्तिका
+            </div>
+
+            <div class="logo-sub">
+                राष्ट्रीय स्वयंसेवक संघ, हरियाणा
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">
+            मुख्य पृष्ठ
+        </a>
+
+        <a href="vimarsh.html" class="active">
+            विमर्श के विषय
+        </a>
+
+        <a href="activities.html">
+            गतिविधियां
+        </a>
+
+        <a href="current-affairs.html">
+            वर्तमान मामले
+        </a>
+
+        <a href="jiwani.html">
+            जीवनी
+        </a>
+
+        <a href="panch-parivartan.html">
+            पंच परिवर्तन
+        </a>
+
+    </nav>
+
+    <button id="themeBtn">
+        🌙
+    </button>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            विमर्श के विषय
+        </h2>
+
+    </div>
+
+    <p style="
+    color:var(--muted);
+    margin-bottom:30px;
+    line-height:1.8;">
+
+        शाखा में होने वाले वैचारिक विमर्श के प्रमुख विषय
+
+    </p>
+
+    <div id="topicsContainer"
+         class="card-grid">
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* THEME */
+
+if(localStorage.getItem("theme")==="dark"){
+
+    document.body.classList.add("dark");
+
+}
+
+document.getElementById("themeBtn")
+.addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark")
+        ? "dark"
+        : "light"
+    );
+
+});
+
+
+/* MOBILE MENU */
+
+document.getElementById("menuBtn")
+.addEventListener("click",()=>{
+
+    document.getElementById("navLinks")
+    .classList.toggle("show");
+
+});
+
+
+/* LOAD VIMARSH */
+
+fetch("vimarsh/topics.json")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+    const container =
+    document.getElementById(
+    "topicsContainer"
+    );
+
+    data.forEach(topic=>{
+
+        container.innerHTML += `
+
+        <a href="vimarsh-topic.html?id=${topic.id}"
+           class="card"
+           style="
+           text-decoration:none;
+           color:inherit;">
+
+            <div class="card-body">
+
+                <h3>
+                    ${topic.title}
+                </h3>
+
+                <p>
+                    ${topic.description}
+                </p>
+
+            </div>
+
+        </a>
+
+        `;
+
+    });
+
+})
+
+.catch(err=>{
+
+    console.error(err);
+
+});
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
