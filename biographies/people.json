@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "श्री गुरुजी",
-        "image": "images/jiwani/guruji.jpg",
+        "image": "images/guruji.jpg",
         "description": "राष्ट्रीय स्वयंसेवक संघ के द्वितीय सरसंघचालक",
         "file": "guruji.json"
     },
@@ -18,15 +18,15 @@
     {
         "id": 3,
         "name": "भगिनी निवेदिता",
-        "image": "images/jiwani/nivedita.jpg",
-        "description": "",
+        "image": "images/nivedita.jpg",
+        "description": "महिला शिक्षा, राष्ट्रसेवा और भारतीय पुनर्जागरण की अग्रदूत",
         "file": "nivedita.json"
     },
 
     {
         "id": 4,
         "name": "डॉ. ए. पी. जे. अब्दुल कलाम",
-        "image": "images/jiwani/apj.jpg",
+        "image": "images/apj.jpg",
         "description": "भारत रत्न एवं मिसाइल मैन",
         "file": "apj.json"
     }
