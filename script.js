@@ -75,57 +75,65 @@ menuBtn.addEventListener(
 -------------------------- */
 const langBtn = document.getElementById("langBtn");
 
-if (langBtn) {
+langBtn.addEventListener("click",()=>{
 
-    langBtn.addEventListener("click", () => {
+    const current =
+    localStorage.getItem("language") || "hi";
 
-        const combo = document.querySelector(".goog-te-combo");
+    if(current === "hi"){
 
-        if (!combo) {
-            alert("Translator is still loading...");
-            return;
-        }
+        const combo =
+        document.querySelector(".goog-te-combo");
 
-        const current =
-            localStorage.getItem("language") || "hi";
+        if(!combo) return;
 
-        const next =
-            current === "hi" ? "en" : "hi";
-
-        combo.value = next;
-
+        combo.value = "en";
         combo.dispatchEvent(
             new Event("change")
         );
 
         localStorage.setItem(
             "language",
-            next
+            "en"
         );
 
-        updateLangButton();
+    }else{
 
-    });
+        localStorage.setItem(
+            "language",
+            "hi"
+        );
 
-}
+        location.reload();   // restores original Hindi
+    }
 
-function updateLangButton(){
+});
 
-    const langBtn =
-    document.getElementById("langBtn");
+window.addEventListener("load",()=>{
 
-    if(!langBtn) return;
+    const saved =
+    localStorage.getItem("language");
 
-    const lang =
-    localStorage.getItem("language") || "hi";
+    if(saved !== "en") return;
 
-    langBtn.textContent =
-        lang === "hi"
-        ? "EN"
-        : "हि";
-}
+    const interval = setInterval(()=>{
 
-updateLangButton();
+        const combo =
+        document.querySelector(".goog-te-combo");
+
+        if(combo){
+
+            combo.value = "en";
+            combo.dispatchEvent(new Event("change"));
+
+            clearInterval(interval);
+
+        }
+
+    },500);
+
+});
+
 /* -------------------------
    DARK MODE
 -------------------------- */
