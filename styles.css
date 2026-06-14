@@ -770,19 +770,14 @@ footer{
 /* Biography Page */
 
 .bio-image{
-
     width:100%;
-    max-width:400px;
-
     height:auto;
 
     display:block;
 
-    margin:0 auto 25px;
+    margin:0 auto 30px;
 
     border-radius:20px;
-
-    object-fit:contain;
 }
 
 .bio-card{
