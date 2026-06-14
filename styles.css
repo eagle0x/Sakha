@@ -110,12 +110,10 @@ body.home-page .nav-home{
 }
 
 .nav-links{
-
     display:flex;
-    gap:25px;
-
+    align-items:center;
+    gap:40px;
 }
-
 .menu-btn{
 
     display:none;
@@ -160,10 +158,14 @@ body.home-page .nav-home{
 
 }
 .nav-actions{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-left: auto;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:30px;
 }
 .langBtn{
 
