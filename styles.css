@@ -159,12 +159,13 @@ body.home-page .nav-home{
     color:white;
 
 }
-.lang-btn{
+.langBtn{
+
     border:none;
 
-    background:var(--card);
+    background:var(--primary);
 
-    color:var(--text);
+    color:white;
 
     width:42px;
     height:42px;
@@ -173,18 +174,30 @@ body.home-page .nav-home{
 
     cursor:pointer;
 
-    border:1px solid var(--border);
+    font-size:0.8rem;
 
-    font-weight:700;
+    font-weight:600;
 
-    font-size:.95rem;
-
-    transition:.3s;
+}
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
 }
 
-.lang-btn:hover{
-    background:var(--primary);
-    color:white;
+body {
+    top: 0 !important;
+}
+
+.skiptranslate {
+    display: none !important;
+}
+
+.goog-logo-link,
+.goog-te-gadget span {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    font-size: 0 !important;
 }
 #themeBtn{
 
