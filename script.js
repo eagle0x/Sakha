@@ -70,7 +70,44 @@ menuBtn.addEventListener(
     );
 
 });
+/* -------------------------
+   LANG BUTTON
+-------------------------- */
+const langBtn =
+document.getElementById("langBtn");
 
+let currentLang =
+localStorage.getItem("language") || "hi";
+
+updateLangButton();
+
+langBtn?.addEventListener("click",()=>{
+
+    currentLang =
+    currentLang === "hi"
+    ? "en"
+    : "hi";
+
+    localStorage.setItem(
+        "language",
+        currentLang
+    );
+
+    updateLangButton();
+
+    translatePage(currentLang);
+
+});
+
+function updateLangButton(){
+
+    if(!langBtn) return;
+
+    langBtn.textContent =
+    currentLang === "hi"
+    ? "EN"
+    : "हि";
+}
 /* -------------------------
    DARK MODE
 -------------------------- */
