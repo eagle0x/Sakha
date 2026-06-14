@@ -175,21 +175,22 @@ body.home-page .nav-home{
 
     color: white;
 
-    width: 42px;
     height: 42px;
 
-    border-radius: 50%;
+    padding: 0 10px;
+
+    border-radius: 999px;
 
     cursor: pointer;
 
-    font-size: 0.65rem;
+    font-size: 0.60rem;   /* smaller text */
+
     font-weight: 600;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0;
 }
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
