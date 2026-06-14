@@ -77,10 +77,23 @@ body.home-page .nav-home{
 }
 
 .logo{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    line-height:1.2;
+}
 
-    font-size:1.3rem;
+.logo-main{
+    font-size:1.35rem;
     font-weight:700;
+    color:var(--text);
+}
 
+.logo-sub{
+    font-size:0.72rem;
+    font-weight:500;
+    color:var(--muted);
+    margin-top:2px;
 }
 
 .nav-links{
@@ -254,10 +267,12 @@ body.home-page .nav-home{
 
     }
 
-    .logo{
+    .logo-main{
+        font-size:1.1rem;
+    }
 
-        font-size:1.15rem;
-
+    .logo-sub{
+        font-size:0.6rem;
     }
 
 }
