@@ -239,6 +239,29 @@ body {
     gap:14px;
 
 }
+.article-content {
+
+    line-height: 2;
+
+    font-size: 1.05rem;
+
+}
+
+.content-line {
+
+    margin: 0;
+
+    text-align: justify;
+
+}
+
+
+
+.content-space {
+
+    height: 16px;
+
+}
 
 /* MOBILE BACK BUTTON */
 
