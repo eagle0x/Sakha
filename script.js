@@ -201,32 +201,16 @@ async function loadContent(){
 function renderArticles(data){
 
     latestContainer.innerHTML = "";
-    /*featuredContainer.innerHTML = "";
-    songsContainer.innerHTML = "";*/
 
-    [...data].reverse().forEach(article=>{
+    [...data]
+        .sort((a, b) => b.id - a.id)
+        .forEach(article => {
 
-        const card = createCard(article);
-
-        /*if(article.featured){
-
-            featuredContainer.appendChild(
-                card.cloneNode(true)
+            latestContainer.appendChild(
+                createCard(article)
             );
 
-        }
-
-        if(article.category === "गीत"){
-
-            songsContainer.appendChild(
-                card.cloneNode(true)
-            );
-
-        }*/
-
-        latestContainer.appendChild(card);
-
-    });
+        });
 
 }
 
@@ -295,33 +279,37 @@ function openArticle(article){
 
     modalTitle.innerText = article.title;
 
+    const formattedContent = Array.isArray(article.content)
+        ? article.content.map(line => {
+
+            if(line.trim() === ""){
+                return "<div class='content-space'></div>";
+            }
+
+            return `<p class="content-line">${line}</p>`;
+
+        }).join("")
+        : `<p class="content-line">${article.content}</p>`;
+
     modalBody.innerHTML = `
 
         <img
-    src="${article.image}"
-    alt="${article.title}">
+        src="${article.image}"
+        alt="${article.title}">
 
         <p style="
             color:var(--muted);
             margin-bottom:15px;
         ">
-
             ${article.category}
-
         </p>
 
-        <div style="
-            line-height:2;
-            font-size:1.05rem;
-        ">
-
-            ${article.content}
-
+        <div class="article-content">
+            ${formattedContent}
         </div>
 
     `;
 }
-
 
 
 /* -------------------------
