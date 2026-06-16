@@ -281,13 +281,30 @@ function openArticle(article){
 
     const formattedContent = Array.isArray(article.content)
         ? article.content.map(line => {
-
-            if(line.trim() === ""){
+    
+            line = String(line).trim();
+    
+            // Blank line
+            if (line === "") {
                 return "<div class='content-space'></div>";
             }
-
+    
+            // Clickable links
+            if (/^https?:\/\/\S+$/i.test(line)) {
+                return `
+                    <p class="content-line">
+                        <a href="${line}"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            ${line}
+                        </a>
+                    </p>
+                `;
+            }
+    
+            // Normal text
             return `<p class="content-line">${line}</p>`;
-
+    
         }).join("")
         : `<p class="content-line">${article.content}</p>`;
 
