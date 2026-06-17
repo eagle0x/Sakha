@@ -329,9 +329,14 @@ function openArticle(article){
             ${article.category}
         </p>
     
-        <div class="article-content">
-            ${formattedContent}
-        </div>
+        <div class="article-content ${
+    article.category === "सुभाषित" ||
+    article.category === "अमृत वचन"
+        ? "center-content"
+        : ""
+    }">
+    ${formattedContent}
+    </div>
     
     `;
 }
