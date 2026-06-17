@@ -324,22 +324,15 @@ function openArticle(article){
         : `<p class="content-line">${article.content}</p>`;
 
     modalBody.innerHTML = `
-
-        <img
-        src="${article.image}"
-        alt="${article.title}">
-
-        <p style="
-            color:var(--muted);
-            margin-bottom:15px;
-        ">
+    
+        <p class="modal-category">
             ${article.category}
         </p>
-
+    
         <div class="article-content">
             ${formattedContent}
         </div>
-
+    
     `;
 }
 
