@@ -80,39 +80,34 @@ event => {
    FETCH
 -------------------------- */
 
-self.addEventListener(
-"fetch",
-event => {
+self.addEventListener("fetch", event => {
+
+    if (event.request.method !== "GET") return;
 
     event.respondWith(
 
-        fetch(event.request)
+        caches.match(event.request)
 
-        .then(response => {
+        .then(cached => {
 
-            const copy =
-            response.clone();
+            if (cached) return cached;
 
-            caches.open(
-            CACHE_NAME
-            ).then(cache => {
+            return fetch(event.request)
 
-                cache.put(
-                event.request,
-                copy
-                );
+            .then(response => {
+
+                const copy = response.clone();
+
+                caches.open(CACHE_NAME)
+                .then(cache => {
+
+                    cache.put(event.request, copy);
+
+                });
+
+                return response;
 
             });
-
-            return response;
-
-        })
-
-        .catch(() => {
-
-            return caches.match(
-            event.request
-            );
 
         })
 
