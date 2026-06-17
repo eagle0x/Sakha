@@ -3,7 +3,7 @@ const CACHE_NAME = "sakha-pustika-v1";
 const urlsToCache = [
 
     "/",
-    "/articles/content.json"
+    "/articles/content.json",
     "/videos/flag.mp4"
 
 ];
