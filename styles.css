@@ -247,12 +247,11 @@ body {
 
 }
 
-.content-line {
-
-    margin: 0;
-
-    text-align: justify;
-
+.content-line{
+    margin:0;
+    word-wrap:break-word;
+    overflow-wrap:break-word;
+    word-break:normal;
 }
 
 
@@ -269,7 +268,13 @@ body {
     color:var(--primary);
     width:100%;
 }
+.left-content{
+    text-align:left !important;
+}
 
+.left-content a{
+    word-break:break-all;
+}
 /* MOBILE BACK BUTTON */
 
 .mobile-back-btn{
