@@ -504,7 +504,7 @@ body {
     border:
     1px solid var(--border);
 
-    background:var(--card);
+    background:var(--);
 
     color:var(--text);
 
@@ -530,7 +530,7 @@ body {
 
     border:none;
 
-    background:var(--card);
+    background:var(--);
 
     color:var(--text);
 
@@ -616,6 +616,115 @@ body {
 
 
 /* CARD */
+.modern-card{
+
+    background:var(--card);
+    border-radius:20px;
+
+    padding:22px;
+
+    border:1px solid var(--border);
+
+    transition:.25s ease;
+
+    cursor:pointer;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:14px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.modern-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.card-category{
+
+    color:#fff;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    display:inline-block;
+}
+
+.card-title{
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+    line-height:1.45;
+
+    margin:0;
+}
+
+.card-desc{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+    margin:0;
+
+    flex:1;
+}
+.modern-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #ea580c,
+        #f59e0b
+    );
+}
+.card-footer{
+
+    color:#ea580c;
+
+    font-weight:600;
+
+    margin-top:8px;
+}
+.modern-card.subhashit{
+    border-left:5px solid #2563eb;
+}
+
+.modern-card.amrit{
+    border-left:5px solid #16a34a;
+}
+
+.modern-card.geet{
+    border-left:5px solid #dc2626;
+}
+
+.modern-card.prasang{
+    border-left:5px solid #ea580c;
+}
 .card{
     cursor:pointer;
 
@@ -638,19 +747,6 @@ body {
 
 }
 
-.card img{
-
-    width:100%;
-
-    height:260px;
-
-    display:block;
-
-    object-fit:cover;
-
-    object-position:center top;
-
-}
 
 .card-body{
 
