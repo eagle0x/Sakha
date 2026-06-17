@@ -389,12 +389,14 @@ body {
         font-size:0.6rem;
     }
     .bio-page{
-        padding:20px;
+        padding:15px;
     }
 
     .bio-image{
-        max-width:100%;
         width:100%;
+        max-width:100%;
+        height:auto;
+        min-height:unset;
     }
 
 }
@@ -1052,24 +1054,18 @@ footer{
 
 /* graphy Page */
 
-.-image{
-
-    width:100%;
-    max-width:400px;
-
-    height:auto;
-    min-height:600px;
-
+.bio-image{
     display:block;
+    width:100%;
+    max-width:450px;
+    height:auto;
 
-    margin:0 auto 25px;
+    margin:0 auto 30px;
 
     border-radius:20px;
-
-    object-fit:contain;
 }
 
-.-card{
+.bio-card{
 
     max-width:900px;
 
@@ -1149,17 +1145,7 @@ footer{
     object-fit:cover;
     object-position:center top;
 }
-.bio-image{
-    display:block;
 
-    width:auto;
-    max-width:450px;
-    height:auto;
-
-    margin:0 auto 30px;
-
-    border-radius:20px;
-}
 .bio-page{
     max-width:1000px;
     margin:auto;
