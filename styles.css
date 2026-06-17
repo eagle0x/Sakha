@@ -388,6 +388,14 @@ body {
     .logo-sub{
         font-size:0.6rem;
     }
+    .bio-page{
+        padding:20px;
+    }
+
+    .bio-image{
+        max-width:100%;
+        width:100%;
+    }
 
 }
 
