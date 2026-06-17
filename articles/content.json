@@ -3,7 +3,6 @@
       "id": 12,
       "title": "प्रेरक प्रसंग - अगस्त मास",
       "category": "प्रेरक प्रसंग",
-      "featured": false,
       "description": "ग्राम्य विकास को जनभागीदारी और संस्कारों से जोड़ने वाले सुरेन्द्र सिंह चौहान का प्रेरक जीवन।",
       "keywords": "Surendra Singh Chauhan, rural development, village development, Mohad village, ideal village, community participation, self-reliance, organic farming, social service, RSS service activities, Nanaji Deshmukh, Gramodaya, environmental conservation, rural leadership, village empowerment",
       "content": [
@@ -28,9 +27,8 @@
     },
     {
     "id": 11,
-    "title": "गीत - जुलाई मास",
+    "title": "गीत - अगस्त मास",
     "category": "गीत",
-    "featured": false,
     "description": "राष्ट्रभक्ति, संस्कृति और वीरता का ओजस्वी गीत।",
     "content": [
         "राष्ट्र की जय चेतना का गान वंदे मातरम्।",
@@ -59,39 +57,39 @@
 },
     
     {
-        "id": 10,
+        "id": 13,
         "title": "अमृत वचन - अगस्त मास",
         "category": "अमृत वचन",
-        "featured": false,
-        "description": "भारत की ज्ञान, विज्ञान और संस्कृति पर स्वामी विवेकानंद का प्रेरक विचार।",
+        "description": "श्रद्धा और दृढ़ संकल्प की शक्ति पर गुरुजी का संदेश।",
         "content": [
-            "जब कभी भारत के सच्चे इतिहास का पता लगाया जायेगा, तब यह संदेश प्रमाणित होगा कि धर्म के समान ही विज्ञान, दर्शन, संगीत, साहित्य, गणित, ललित कला आदि में भी भारत समग्र संसार का आदि गुरु रहा है।",
+            "अखंड श्रद्धा और दृढ़ संकल्प यही जिनकी एकमात्र शक्ति होती है,",
+            "ऐसे सामान्य मनुष्यों से ही देश के महान कार्य हुए हैं।",
             "",
-            "— स्वामी विवेकानंद"
+            "— प. पू. गुरूजी"
         ],
-        "keywords": "swami vivekananda, india, history, science, philosophy, literature, mathematics, culture, civilization, bharat, inspiration, amrit vachan"
+        "keywords": "guruji, faith, determination, dedication, nation building, patriotism, leadership"
     },
     
     {
         "id": 9,
         "title": "सुभाषित - अगस्त मास",
         "category": "सुभाषित",
-        "featured": false,
-        "description": "परिश्रम और पुरुषार्थ के महत्व को स्पष्ट करने वाला प्रेरणादायक सुभाषित।",
+        "description": "परिश्रम और पुरुषार्थ का महत्व बताने वाला सुभाषित।",
         "content": [
-            "उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः ।",
-            "न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मृगाः ॥",
+            "उद्यमेन हि सिध्यन्ति कार्यणि न मनोरथैः ।",
+            "न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मगाः ॥",
             "",
-            "जिस प्रकार सोए हुए सिंह के मुख में मृग स्वयं नहीं चले जाते, सिंह को अपनी क्षुधा शांत करने के लिए शिकार करना पड़ता है। उसी प्रकार केवल इच्छा करने से कोई कार्य सिद्ध नहीं होता, कार्य तो पुरुषार्थ और उद्यम से ही सिद्ध होता है।"
+            "भावार्थ :",
+            "",
+            "जिस प्रकार से सोये हुए सिंह के मुख में मृग स्वयं नहीं चले जाते, सिंह को क्षुधा-शान्ति के लिए शिकार करना ही पड़ता है, उसी प्रकार से किसी कार्य की मात्र इच्छा कर लेने से वह कार्य सिद्ध नहीं हो जाता, कार्य उद्यम करने से ही सिद्ध होता है।"
         ],
-        "keywords": "hard work, effort, perseverance, success, motivation, sanskrit quote, self improvement, discipline, determination, subhashit"
+        "keywords": "hard work, effort, success, motivation, perseverance, determination, self improvement"
     },
     
     {
       "id": 8,
       "title": "प्रेरक प्रसंग - जुलाई मास",
       "category": "प्रेरक प्रसंग",
-      "featured": false,
       "description": "वैज्ञानिक दृष्टि, मानवतावादी संवेदना और वेदान्त आधारित शिक्षा के माध्यम से राष्ट्रनिर्माण का प्रेरक चिंतन।",
       "keywords": "scientific temper, humanistic values, spirituality, Swami Vivekananda, Vedanta, education, character building, human resource development, critical thinking, rational inquiry, Indian philosophy, student life, teachers, nation building, spiritual development, cultural values",
       "content": [
@@ -206,38 +204,37 @@
         "id": 6,
         "title": "अमृत वचन - जुलाई मास",
         "category": "अमृत वचन",
-        "featured": false,
-        "description": "कार्य की गति और लक्ष्य-सिद्धि पर परम पूज्य डॉक्टर हेडगेवार का चिंतन।",
+        "description": "कार्य की गति और उद्देश्य प्राप्ति पर डॉ. हेडगेवार का चिंतन।",
         "content": [
-            "हम लोगों को हमेशा सोचना चाहिए कि जिस कार्य को करने का हमने प्रण किया है, और जो उद्देश्य हमारे सामने हैं, उसे प्राप्त करने के लिए हम जितना कार्य कर रहे हैं, जिस गति से एवं जिस प्रमाण से हम अपने कार्य को आगे बढ़ा रहे हैं, क्या वह गति और प्रमाण हमारी कार्य सिद्धि के लिए पर्याप्त है।",
+            "हम लोगों को हमेशा सोचना चाहिए कि जिस कार्य को करने का हमने प्रण किया है, और जो उद्देश्य हमारे सामने हैं, उसे प्राप्त करने के लिए हम जितना कार्य कर रहे हैं, जिस गति से एवं जिस प्रमाण से हम अपने कार्य को आगे बढ़ा रहे हैं क्या वह गति और प्रमाण हमारी कार्य सिद्धि के लिए पर्याप्त है।",
             "",
             "— परम पूज्य डॉक्टर हेडगेवार"
         ],
-        "keywords": "dr hedgewar, rss, dedication, mission, organization, leadership, discipline, work ethic, commitment, national service, amrit vachan"
+        "keywords": "dr hedgewar, mission, organization, leadership, self assessment, dedication, rss"
     },
     
     {
         "id": 5,
         "title": "सुभाषित - जुलाई मास",
         "category": "सुभाषित",
-        "featured": false,
-        "description": "मातृभूमि के प्रति सर्वोच्च प्रेम का संदेश देने वाला प्रसिद्ध श्लोक।",
+        "description": "मातृभूमि के प्रति सर्वोच्च प्रेम का संदेश।",
         "content": [
             "अपि स्वर्णमयी लंका न मे लक्ष्मण रोचते ।",
             "जननी जन्मभूमिश्च स्वर्गादपि गरीयसी ॥",
             "",
             "(वाल्मीकि रामायण)",
             "",
+            "भावार्थ :",
+            "",
             "हे लक्ष्मण! सोने की लंका भी मुझे नहीं रुचती। मुझे तो माता और मातृभूमि स्वर्ग से भी अधिक प्रिय है।"
         ],
-        "keywords": "janani janmabhoomi, patriotism, motherland, valmiki ramayan, lord rama, nationalism, bharat, cultural heritage, sanskrit verse, subhashit"
+        "keywords": "motherland, patriotism, ramayan, lord rama, nationalism, bharat, janani janmabhoomi"
     },
     
     {
       "id": 4,
       "title": "प्रेरक प्रसंग - जून मास",
       "category": "प्रेरक प्रसंग",
-      "featured": false,
       "description": "छत्रपति शिवाजी महाराज के सुशासन, दूरदर्शिता, न्यायप्रियता एवं राष्ट्रदृष्टि का प्रेरक प्रसंग।",
       "keywords": "Shivaji Maharaj, Chhatrapati Shivaji Maharaj, Good Governance, Swarajya, Hindavi Swarajya, Justice, Leadership, Nation Building, Inspirational Story, Shivaji Administration",
       "content": [
@@ -276,7 +273,6 @@
         "id": 3,
         "title": "गीत - जून मास",
         "category": "गीत",
-        "featured": false,
         "description": "देशभक्ति और परहित की भावना जगाने वाला प्रेरक गीत।",
         "content": [
             "देश हमें देता है सबकुछ, हम भी तो कुछ देना सीखें।",
@@ -303,30 +299,31 @@
         "id": 2,
         "title": "अमृत वचन - जून मास",
         "category": "अमृत वचन",
-        "featured": false,
-        "description": "श्रद्धा, संकल्प और राष्ट्रकार्य पर पूजनीय गुरुजी का प्रेरणादायी संदेश।",
+        "description": "भारत की महान सांस्कृतिक एवं वैज्ञानिक परंपरा पर स्वामी विवेकानंद का विचार।",
         "content": [
-            "अखंड श्रद्धा और दृढ़ संकल्प ही जिनकी एकमात्र शक्ति होती है, ऐसे सामान्य मनुष्यों से ही देश के महान कार्य हुए हैं।",
+            "जब कभी भारत के सच्चे इतिहास का पता लगाया जायेगा। तब यह संदेश प्रमाणित होगा कि धर्म के समान ही विज्ञान दर्शन संगीत साहित्य गणित ललित कला आदि में भी भारत समग्र संसार का आदि गुरु रहा है।",
             "",
-            "— प. पू. गुरुजी"
+            "— स्वामी विवेकानंद"
         ],
-        "keywords": "guruji, ms golwalkar, determination, faith, dedication, nation building, character, leadership, patriotism, inspiration, amrit vachan"
+        "keywords": "swami vivekananda, india, culture, science, philosophy, civilization, heritage, inspiration"
     },
     
     {
         "id": 1,
         "title": "सुभाषित - जून मास",
         "category": "सुभाषित",
-        "featured": false,
         "description": "बड़ों के सम्मान और सेवा का महत्व बताने वाला प्रेरक सुभाषित।",
         "content": [
-            "अभिवादनशीलस्य, नित्यं वृद्धोपसेविनः ।",
-            "चत्वारि तस्य वर्धन्ते, आयुर्विद्या यशोबलम् ॥",
+            "अभिवादनशीलस्य, नित्यं वृद्धोपसेविन: ।",
+            "चत्वारि तस्य वर्धन्ते, आयुर्विद्या यशोबलम् ।।",
             "",
-            "जो अपने से बड़ों को सदैव आदर करता है, किसी भी प्रकार से उनका अभिवादन करता है और जो वृद्धों की नित्य सेवा किया करता है, उसकी चार चीजें बढ़ती हैं – आयु, विद्या, कीर्ति और शक्ति।"
+            "भावार्थ :",
+            "",
+            "जो अपने से बड़ों को सदैव आदर करता है, किसी भी प्रकार से उनका अभिवादन करता है और जो वृद्धों की नित्य सेवा किया करता है, उसकी चार चीजें बढ़ती हैं – आयु, विद्या, कीर्ति और शक्ति ।"
         ],
-        "keywords": "respect elders, sanskrit subhashit, humility, service, wisdom, knowledge, longevity, character building, indian values, moral education"
+        "keywords": "respect elders, service, sanskrit quote, values, character building, discipline, knowledge, wisdom"
     }
+
 
 
 
