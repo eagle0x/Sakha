@@ -549,23 +549,67 @@ body {
 }
 
 .chip{
-
-    border:none;
-
+    border:2px solid var(--border);
     background:var(--card);
-
     color:var(--text);
 
-    padding:
-    10px 18px;
-
+    padding:10px 18px;
     border-radius:999px;
 
     cursor:pointer;
 
-    border:
-    1px solid var(--border);
+    transition:.25s;
+}
 
+/* सभी */
+.chip[data-category="सभी"]{
+    border-color:var(--border);
+}
+
+/* सुभाषित */
+.chip[data-category="सुभाषित"]{
+    border-color:#2563eb;
+}
+
+/* अमृत वचन */
+.chip[data-category="अमृत वचन"]{
+    border-color:#16a34a;
+}
+
+/* गीत */
+.chip[data-category="गीत"]{
+    border-color:#dc2626;
+}
+
+/* प्रेरक प्रसंग */
+.chip[data-category="प्रेरक प्रसंग"]{
+    border-color:#ea580c;
+}
+
+/* Active state */
+.chip.active{
+    color:white;
+}
+
+/* Active colors */
+.chip[data-category="सुभाषित"].active{
+    background:#2563eb;
+    border-color:#2563eb;
+}
+
+.chip[data-category="अमृत वचन"].active{
+    background:#16a34a;
+    border-color:#16a34a;
+}
+
+.chip[data-category="गीत"].active{
+    background:#dc2626;
+    border-color:#dc2626;
+}
+
+.chip[data-category="प्रेरक प्रसंग"].active{
+    background:#ea580c;
+    border-color:#ea580c;
 }
 
 .chip.active{
