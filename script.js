@@ -315,11 +315,18 @@ function openArticle(article){
                 </p>
             `;
         }
+        if(line === "गीत सुनें:"){
+        return `
+            <p class="content-line left-content">
+                ${line}
+            </p>
+            `;
+        }
 
         // youtube links
         if(/^https?:\/\/\S+$/i.test(line)){
             return `
-                <p class="content-line">
+                <p class="content-line left-content">
                     <a href="${line}"
                        target="_blank"
                        rel="noopener noreferrer">
@@ -347,7 +354,8 @@ function openArticle(article){
 
         <div class="article-content ${
             article.category === "सुभाषित" ||
-            article.category === "अमृत वचन"
+            article.category === "अमृत वचन" ||
+            article.category === "गीत"
                 ? "center-content"
                 : ""
         }">
