@@ -222,49 +222,64 @@ function renderArticles(data){
 
 function createCard(article){
 
-    const div =
-    document.createElement("div");
+    const div = document.createElement("div");
 
-    div.className = "card";
+    let categoryClass = "";
+
+    switch(article.category){
+
+        case "सुभाषित":
+            categoryClass = "subhashit";
+            break;
+
+        case "अमृत वचन":
+            categoryClass = "amrit";
+            break;
+
+        case "गीत":
+            categoryClass = "geet";
+            break;
+
+        case "प्रेरक प्रसंग":
+            categoryClass = "prasang";
+            break;
+    }
+
+    div.className =
+    `card modern-card ${categoryClass}`;
 
     div.innerHTML = `
 
-        <img
-        src="${article.image}"
-        alt="${article.title}"
-        loading="lazy">
+        <div class="card-top">
 
-        <div class="card-body">
-
-            <span class="badge">
+            <span class="card-category ${categoryClass}">
                 ${article.category}
             </span>
 
-            <h3>
-                ${article.title}
-            </h3>
+        </div>
 
-            <p>
-                ${article.description}
-            </p>
+        <h3 class="card-title">
+            ${article.title}
+        </h3>
 
+        <p class="card-desc">
+            ${article.description}
+        </p>
 
+        <div class="card-footer">
+            पूरा पढ़ें →
         </div>
 
     `;
 
-    div.style.cursor = "pointer";
+    div.addEventListener("click",()=>{
 
-div.addEventListener("click",()=>{
-
-    openArticle(article);
+        openArticle(article);
 
     });
 
     return div;
-
 }
-
 
 
 /* -------------------------
