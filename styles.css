@@ -314,7 +314,13 @@ body {
 
     font-size:.9rem;
 }
+.center-content{
+    text-align:center;
+}
 
+.center-content .content-line{
+    text-align:center;
+}
 #closeModal{
 
     position: absolute;
