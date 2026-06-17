@@ -262,6 +262,12 @@ body {
     height: 16px;
 
 }
+.bhaavarth-title{
+    text-align:left;
+    font-weight:700;
+    margin-top:20px;
+    color:var(--primary);
+}
 
 /* MOBILE BACK BUTTON */
 
