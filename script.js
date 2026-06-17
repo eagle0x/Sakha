@@ -321,7 +321,11 @@ function openArticle(article){
             return `<p class="content-line">${line}</p>`;
     
         }).join("")
-        : `<p class="content-line">${article.content}</p>`;
+        :if (line === "भावार्थ :") {
+        return `<p class="content-line bhaavarth-title">${line}</p>`;
+}
+
+return `<p class="content-line">${line}</p>`;
 
     modalBody.innerHTML = `
     
