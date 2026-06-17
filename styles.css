@@ -263,10 +263,11 @@ body {
 
 }
 .bhaavarth-title{
-    text-align:left;
+    text-align:left !important;
     font-weight:700;
     margin-top:20px;
     color:var(--primary);
+    width:100%;
 }
 
 /* MOBILE BACK BUTTON */
