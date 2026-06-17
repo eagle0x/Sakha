@@ -1117,6 +1117,9 @@ footer{
     box-shadow: var(--shadow);
     transition: .3s;
     cursor: pointer;
+    max-width:900px;
+    margin:auto;
+    padding:30px;
 }
 
 .bio-card:hover{
@@ -1133,6 +1136,21 @@ footer{
     height:100%;
     object-fit:cover;
     object-position:center top;
+}
+.bio-image{
+    display:block;
+
+    width:100%;
+    max-width:350px;
+
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+    object-position:center top;
+
+    margin:0 auto 30px;
+
+    border-radius:20px;
 }
 
 .nav-left{
