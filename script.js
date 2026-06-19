@@ -480,9 +480,7 @@ chips.forEach(chip=>{
     chip.addEventListener("click",()=>{
 
         chips.forEach(c=>{
-
             c.classList.remove("active");
-
         });
 
         chip.classList.add("active");
@@ -491,15 +489,12 @@ chips.forEach(chip=>{
         chip.dataset.category;
 
         if(category === "सभी"){
-
             renderArticles(allArticles);
-
             return;
-
         }
 
         const filtered =
-        allArticles.filter(item=>
+        allArticles.filter(item =>
             item.category === category
         );
 
@@ -649,7 +644,25 @@ let lang =
 localStorage.getItem("lang") || "hi";
 
 function applyLanguage(){
+    document.querySelectorAll(".chip").forEach(chip => {
 
+    const cat = chip.dataset.category;
+
+    if(lang === "en"){
+
+        if(cat === "सभी") chip.textContent = "All";
+        if(cat === "सुभाषित") chip.textContent = "Subhashit";
+        if(cat === "अमृत वचन") chip.textContent = "Amrit Vachan";
+        if(cat === "गीत") chip.textContent = "Geet";
+        if(cat === "प्रेरक प्रसंग") chip.textContent = "Inspirational Stories";
+
+    }else{
+
+        chip.textContent = cat;
+
+    }
+
+});
     document
     .querySelectorAll("[data-key]")
     .forEach(el => {
