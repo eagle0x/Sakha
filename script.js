@@ -621,7 +621,7 @@ const translations = {
 
         logo: "e-Shakha Pustika",
         front: "Shakha Pustika",
-        front: "Nation First • Character Building • Organization",
+        front1: "Nation First • Character Building • Organization",
         rss: "Rashtriya Swayamsevak Sangh, Haryana",
         content: "Content",
         lcontent:"Latest Content",
