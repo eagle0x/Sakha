@@ -614,7 +614,7 @@ const translations = {
 
         logo: "e-Sakha Pustika",
         "main-page": "Home",
-        discourse: "Discussion",
+        discourse: "Discourse",
         activities: "Activities",
         news: "News",
         biography: "Biography",
