@@ -595,7 +595,7 @@ const translations = {
 
     hi: {
 
-        logo: "E-शाखा पुस्तिका",
+        logo: "e-शाखा पुस्तिका",
         "main-page": "मुख्य पृष्ठ",
         discourse: "विमर्श",
         activities: "गतिविधियां",
@@ -612,7 +612,7 @@ const translations = {
 
     en: {
 
-        logo: "E-Sakha Handbook",
+        logo: "e-Sakha Pustika",
         "main-page": "Home",
         discourse: "Discussion",
         activities: "Activities",
@@ -621,8 +621,8 @@ const translations = {
         "panch-parivartan": "Panch Parivartan",
 
         subhasit: "Subhashit",
-        "amrit-vachan": "Inspirational Quotes",
-        geet: "Songs",
+        "amrit-vachan": "Amrit Vachan",
+        geet: "Geet",
         "motivational-story": "Inspirational Stories"
 
     }
