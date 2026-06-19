@@ -488,7 +488,7 @@ chips.forEach(chip=>{
         chip.classList.add("active");
 
         const category =
-        chip.innerText.trim();
+        chip.dataset.category;
 
         if(category === "सभी"){
 
