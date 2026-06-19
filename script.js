@@ -595,21 +595,35 @@ const translations = {
 
     hi: {
 
-        logo:"E-शाखा पुस्तिका",
-        biography:"जीवनी",
-        activities:"गतिविधियां",
-        currentAffairs:"वर्तमान मामले",
-        panch:"पंच परिवर्तन"
+        logo: "E-शाखा पुस्तिका",
+        "main-page": "मुख्य पृष्ठ",
+        discourse: "विमर्श",
+        activities: "गतिविधियां",
+        news: "समाचार",
+        biography: "जीवनी",
+        "panch-parivartan": "पंच परिवर्तन",
+
+        subhasit: "सुभाषित",
+        "amrit-vachan": "अमृत वचन",
+        geet: "गीत",
+        "motivational-story": "प्रेरक प्रसंग"
 
     },
 
     en: {
 
-        logo:"E-Sakha Handbook",
-        biography:"Biography",
-        activities:"Activities",
-        currentAffairs:"Current Affairs",
-        panch:"Panch Parivartan"
+        logo: "E-Sakha Handbook",
+        "main-page": "Home",
+        discourse: "Discussion",
+        activities: "Activities",
+        news: "News",
+        biography: "Biography",
+        "panch-parivartan": "Panch Parivartan",
+
+        subhasit: "Subhashit",
+        "amrit-vachan": "Inspirational Quotes",
+        geet: "Songs",
+        "motivational-story": "Inspirational Stories"
 
     }
 
@@ -622,13 +636,13 @@ function applyLanguage(){
 
     document
     .querySelectorAll("[data-key]")
-    .forEach(el=>{
+    .forEach(el => {
 
-        const key =
-        el.dataset.key;
+        const key = el.dataset.key;
 
         if(
-        translations[lang][key]
+            translations[lang] &&
+            translations[lang][key]
         ){
             el.textContent =
             translations[lang][key];
@@ -636,38 +650,51 @@ function applyLanguage(){
 
     });
 
+    const btn =
     document.getElementById(
     "floatingLangBtn"
-    ).textContent =
-    lang === "hi"
-    ? "EN"
-    : "हि";
+    );
+
+    if(btn){
+
+        btn.textContent =
+        lang === "hi"
+        ? "EN"
+        : "हि";
+
+    }
 
 }
 
 applyLanguage();
 
-document
-.getElementById(
+const floatingBtn =
+document.getElementById(
 "floatingLangBtn"
-)
-.addEventListener(
-"click",
-()=>{
+);
 
-    lang =
-    lang==="hi"
-    ? "en"
-    : "hi";
+if(floatingBtn){
 
-    localStorage.setItem(
-    "lang",
-    lang
+    floatingBtn.addEventListener(
+    "click",
+    () => {
+
+        lang =
+        lang === "hi"
+        ? "en"
+        : "hi";
+
+        localStorage.setItem(
+        "lang",
+        lang
+        );
+
+        applyLanguage();
+
+    }
     );
 
-    applyLanguage();
-
-});
+}
 /* -------------------------
    CHECK FOR UPDATES
 -------------------------- */
