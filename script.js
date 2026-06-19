@@ -596,34 +596,48 @@ const translations = {
     hi: {
 
         logo: "e-शाखा पुस्तिका",
-        "main-page": "मुख्य पृष्ठ",
+        front: "शाखा पुस्तिका",
+        front1: "राष्ट्र प्रथम • चरित्र निर्माण • संगठन",
+        rss: "राष्ट्रीय स्वयंसेवक संघ, हरियाणा",
+        content: "लेख",
+        lcontent:"नवीनतम सामग्री",
+
+        home: "मुख्य पृष्ठ",
         discourse: "विमर्श",
         activities: "गतिविधियां",
         news: "समाचार",
         biography: "जीवनी",
-        "panch-parivartan": "पंच परिवर्तन",
+        panch: "पंच परिवर्तन",
 
         subhasit: "सुभाषित",
-        "amrit-vachan": "अमृत वचन",
+        amrit "अमृत वचन",
         geet: "गीत",
-        "motivational-story": "प्रेरक प्रसंग"
-
+        story: "प्रेरक प्रसंग",
+        name: "शाखा पुस्तिका डिजिटल संस्करण",
+        contact: "संपर्क करें..."
     },
 
     en: {
 
-        logo: "e-Sakha Pustika",
-        "main-page": "Home",
+        logo: "e-Shakha Pustika",
+        front: "Shakha Pustika",
+        front: "Nation First • Character Building • Organization",
+        rss: "Rashtriya Swayamsevak Sangh, Haryana",
+        content: "Content",
+        lcontent:"Latest Content",
+        home: "Home",
         discourse: "Discourse",
         activities: "Activities",
         news: "News",
         biography: "Biography",
-        "panch-parivartan": "Panch Parivartan",
+        panch: "Panch Parivartan",
 
         subhasit: "Subhashit",
-        "amrit-vachan": "Amrit Vachan",
+        amrit: "Amrit Vachan",
         geet: "Geet",
-        "motivational-story": "Inspirational Stories"
+        story: "Inspirational Stories",
+        name: "Shakha Pustika Digital Edition",
+        contact: "Contact us..."
 
     }
 
