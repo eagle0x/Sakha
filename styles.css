@@ -1212,6 +1212,33 @@ footer{
     font-size:4rem;
     color:var(--primary);
 }
+.floating-lang-btn{
+
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:60px;
+    height:60px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#ea580c;
+
+    color:white;
+
+    font-weight:700;
+    font-size:1rem;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+}
 
 /* MOBILE */
 
