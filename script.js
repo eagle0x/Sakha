@@ -609,6 +609,7 @@ const translations = {
         biography: "जीवनी",
         panch: "पंच परिवर्तन",
 
+        all:"सभी",
         subhasit: "सुभाषित",
         amrit: "अमृत वचन",
         geet: "गीत",
@@ -632,6 +633,7 @@ const translations = {
         biography: "Biography",
         panch: "Panch Parivartan",
 
+        all:"All",
         subhasit: "Subhashit",
         amrit: "Amrit Vachan",
         geet: "Geet",
