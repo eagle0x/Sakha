@@ -610,7 +610,7 @@ const translations = {
         panch: "पंच परिवर्तन",
 
         subhasit: "सुभाषित",
-        amrit "अमृत वचन",
+        amrit: "अमृत वचन",
         geet: "गीत",
         story: "प्रेरक प्रसंग",
         name: "शाखा पुस्तिका डिजिटल संस्करण",
