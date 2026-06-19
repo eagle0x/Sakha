@@ -1208,6 +1208,10 @@ footer{
     display:none;
 
 }
+.vande h1{
+    font-size:4rem;
+    color:var(--primary);
+}
 
 /* MOBILE */
 
@@ -1336,5 +1340,9 @@ footer{
     .nav-actions{
         gap: 8px;
     }
+    .vande h1{
+        font-size:2.8rem;
+    }
+
 
 }
