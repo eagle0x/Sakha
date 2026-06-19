@@ -73,72 +73,72 @@ menuBtn.addEventListener(
 /* -------------------------
    LANG BUTTON
 -------------------------- */
-const langBtn = document.getElementById("langBtn");
+// const langBtn = document.getElementById("langBtn");
 
-langBtn.addEventListener("click",()=>{
+// langBtn.addEventListener("click",()=>{
 
-    const current =
-    localStorage.getItem("language") || "hi";
+//     const current =
+//     localStorage.getItem("language") || "hi";
 
-    if(current === "hi"){
+//     if(current === "hi"){
 
-        const combo =
-        document.querySelector(".goog-te-combo");
+//         const combo =
+//         document.querySelector(".goog-te-combo");
 
-        if(!combo) return;
+//         if(!combo) return;
 
-        combo.value = "en";
-        combo.dispatchEvent(
-            new Event("change")
-        );
+//         combo.value = "en";
+//         combo.dispatchEvent(
+//             new Event("change")
+//         );
 
-        localStorage.setItem(
-            "language",
-            "en"
-        );
+//         localStorage.setItem(
+//             "language",
+//             "en"
+//         );
 
-    }else{
+//     }else{
 
-    localStorage.setItem("language","hi");
+//     localStorage.setItem("language","hi");
 
-    document.cookie =
-        "googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+//     document.cookie =
+//         "googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 
-    document.cookie =
-        "googtrans=;domain=" +
-        window.location.hostname +
-        ";path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+//     document.cookie =
+//         "googtrans=;domain=" +
+//         window.location.hostname +
+//         ";path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 
-    location.reload();
+//     location.reload();
 
-}
+// }
 
-});
+// });
 
-window.addEventListener("load",()=>{
+// window.addEventListener("load",()=>{
 
-    const saved =
-    localStorage.getItem("language");
+//     const saved =
+//     localStorage.getItem("language");
 
-    if(saved !== "en") return;
+//     if(saved !== "en") return;
 
-    const interval = setInterval(()=>{
+//     const interval = setInterval(()=>{
 
-        const combo =
-        document.querySelector(".goog-te-combo");
+//         const combo =
+//         document.querySelector(".goog-te-combo");
 
-        if(combo){
+//         if(combo){
 
-            combo.value = "en";
-            combo.dispatchEvent(new Event("change"));
+//             combo.value = "en";
+//             combo.dispatchEvent(new Event("change"));
 
-            clearInterval(interval);
+//             clearInterval(interval);
 
-        }
+//         }
 
-    },500);
+//     },500);
 
-});
+// });
 
 /* -------------------------
    DARK MODE
@@ -588,8 +588,86 @@ quotes.length
 
 randomQuote();
 
+/* -------------------------
+   lang
+-------------------------- */
+const translations = {
 
+    hi: {
 
+        logo:"E-शाखा पुस्तिका",
+        biography:"जीवनी",
+        activities:"गतिविधियां",
+        currentAffairs:"वर्तमान मामले",
+        panch:"पंच परिवर्तन"
+
+    },
+
+    en: {
+
+        logo:"E-Sakha Handbook",
+        biography:"Biography",
+        activities:"Activities",
+        currentAffairs:"Current Affairs",
+        panch:"Panch Parivartan"
+
+    }
+
+};
+
+let lang =
+localStorage.getItem("lang") || "hi";
+
+function applyLanguage(){
+
+    document
+    .querySelectorAll("[data-key]")
+    .forEach(el=>{
+
+        const key =
+        el.dataset.key;
+
+        if(
+        translations[lang][key]
+        ){
+            el.textContent =
+            translations[lang][key];
+        }
+
+    });
+
+    document.getElementById(
+    "floatingLangBtn"
+    ).textContent =
+    lang === "hi"
+    ? "EN"
+    : "हि";
+
+}
+
+applyLanguage();
+
+document
+.getElementById(
+"floatingLangBtn"
+)
+.addEventListener(
+"click",
+()=>{
+
+    lang =
+    lang==="hi"
+    ? "en"
+    : "hi";
+
+    localStorage.setItem(
+    "lang",
+    lang
+    );
+
+    applyLanguage();
+
+});
 /* -------------------------
    CHECK FOR UPDATES
 -------------------------- */
