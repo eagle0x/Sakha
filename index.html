@@ -30,7 +30,7 @@
     <span class="logo-emoji">🚩</span>
 
     <div class="logo-text">
-        <div class="logo-main">
+        <div class="logo-main" data-key="logo">
             e-शाखा पुस्तिका
         </div>
 
@@ -43,26 +43,26 @@
 <div class="nav-right">
     <nav class="nav-links" id="navLinks">
 
-        <a href="index.html" class="nav-home">
+        <a href="index.html" class="nav-home" data-key="main-page">
             मुख्य पृष्ठ
         </a>
-        <a href="vimarsh.html">
+        <a href="vimarsh.html" data-key="discourse">
             विमर्श
         </a>
 
-        <a href="activities.html">
+        <a href="activities.html" data-key="activities">
             गतिविधियां
         </a>
 
-        <a href="current-affairs.html">
+        <a href="current-affairs.html" data-key="news">
             समाचार
         </a>
 
-        <a href="jiwani.html">
+        <a href="jiwani.html" data-key="biography">
             जीवनी
         </a>
 
-        <a href="panch-parivartan.html">
+        <a href="panch-parivartan.html" data-key="panch-parivartan">
             पंच परिवर्तन
         </a>
     </nav>
@@ -123,19 +123,19 @@
 
     <button class="chip active" data-category="सभी">सभी</button>
     
-    <button class="chip" data-category="सुभाषित">
+    <button class="chip" data-category="सुभाषित" data-key="subhasit">
         सुभाषित
     </button>
     
-    <button class="chip" data-category="अमृत वचन">
+    <button class="chip" data-category="अमृत वचन" data-key="amrit-vachan">
         अमृत वचन
     </button>
     
-    <button class="chip" data-category="गीत">
+    <button class="chip" data-category="गीत" data-key="geet">
         गीत
     </button>
     
-    <button class="chip" data-category="प्रेरक प्रसंग">
+    <button class="chip" data-category="प्रेरक प्रसंग" data-key="motivational-story">
         प्रेरक प्रसंग
     </button>
 
@@ -316,5 +316,8 @@ function googleTranslateElementInit() {
 </script>
 <script src="script.js"></script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<button id="floatingLangBtn" class="floating-lang-btn">
+    EN
+</button>
 </body>
 </html>
