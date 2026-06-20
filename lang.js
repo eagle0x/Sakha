@@ -10,7 +10,16 @@ const translations = {
         panch:"पंच परिवर्तन",
         sod: "विमर्श के विषय",
         txt: "शाखा में होने वाले वैचारिक विमर्श के प्रमुख विषय",
-        txtj:"महापुरुषों की जीवनी"
+        txtj:"महापुरुषों की जीवनी",
+        ca:"📰 वर्तमान मामले",
+        txtca:"इस सप्ताह की प्रमुख घटनाएँ एवं समसामयिक विषय",
+        all:"सभी",
+        nat:"राष्ट्रीय",
+        inat:"अंतरराष्ट्रीय",
+        game:"खेल",
+        sc:"विज्ञान",
+        eco:"अर्थव्यवस्था",
+        env:"पर्यावरण"
     },
 
     en:{
@@ -24,7 +33,16 @@ const translations = {
         panch:"Panch Parivartan",
         sod: "Subject of Discourse",
         txt: "Main Subjects of Ideological Discourse in the Shakha",
-        txtj: "Biographies of Great Personalities"
+        txtj: "Biographies of Great Personalities",
+        ca: "📰 Current Affairs",
+        txtca: "News of the Week",
+        all:"All",
+        nat:"National",
+        inat:"International",
+        game:"Games",
+        sc:"Science",
+        eco:"Economy",
+        env:"Enviroment"
     }
 };
 
