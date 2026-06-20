@@ -33,11 +33,11 @@
 
         <div class="logo-text">
 
-            <div class="logo-main">
+            <div class="logo-main" data-key="logo">
                 e-शाखा पुस्तिका
             </div>
 
-            <div class="logo-sub">
+            <div class="logo-sub" data-key="name">
                 राष्ट्रीय स्वयंसेवक संघ, हरियाणा
             </div>
 
@@ -47,27 +47,27 @@
 
     <nav class="nav-links" id="navLinks">
 
-        <a href="index.html">
+        <a href="index.html" data-key="home">
             मुख्य पृष्ठ
         </a>
 
-        <a href="vimarsh.html" class="active">
+        <a href="vimarsh.html" class="active" data-key="vimarsh">
             विमर्श
         </a>
 
-        <a href="activities.html">
+        <a href="activities.html" data-key="activities">
             गतिविधियां
         </a>
 
-        <a href="current-affairs.html">
+        <a href="current-affairs.html" data-key="news">
             समाचार
         </a>
 
-        <a href="jiwani.html">
+        <a href="jiwani.html" data-key="biography">
             जीवनी
         </a>
 
-        <a href="panch-parivartan.html">
+        <a href="panch-parivartan.html" data-key="panch">
             पंच परिवर्तन
         </a>
 
@@ -311,7 +311,9 @@ fetch("articles/vimarsh.json")
 });
 
 </script>
-
+<button id="floatingLangBtn" class="floating-lang-btn">
+    EN
+</button>
 <script src="script.js"></script>
 
 </body>
