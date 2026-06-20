@@ -434,19 +434,19 @@
 
     <div class="category-chips">
 
-        <button class="active" data-key="all">सभी</button>
-
-        <button data-key="nat">राष्ट्रीय</button>
-
-        <button data-key="inat">अंतरराष्ट्रीय</button>
-
-        <button data-key="game">खेल</button>
-
-        <button data-key="sc">विज्ञान</button>
-
-        <button data-key="eco">अर्थव्यवस्था</button>
+        <button class="active" data-category="सभी" data-key="all">सभी</button>
         
-        <button data-key="env">पर्यावरण</button>
+        <button data-category="राष्ट्रीय" data-key="nat">राष्ट्रीय</button>
+        
+        <button data-category="अंतरराष्ट्रीय" data-key="inat">अंतरराष्ट्रीय</button>
+        
+        <button data-category="खेल" data-key="game">खेल</button>
+        
+        <button data-category="विज्ञान" data-key="sc">विज्ञान</button>
+        
+        <button data-category="अर्थव्यवस्था" data-key="eco">अर्थव्यवस्था</button>
+        
+        <button data-category="पर्यावरण" data-key="env">पर्यावरण</button>
 
     </div>
 
@@ -522,8 +522,8 @@ function render(data){
             📅 ${item.date}
         </div>
 
-        <span class="news-category">
-            ${item.category}
+        <span class="news-">
+            ${item.}
         </span>
 
         <h3>
@@ -687,7 +687,7 @@ chips.forEach(chip=>{
         );
 
         const category =
-        chip.innerText.trim();
+        chip.dataset.category;
 
         if(category==="सभी"){
 
