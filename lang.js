@@ -9,7 +9,8 @@ const translations = {
         biography:"जीवनी",
         panch:"पंच परिवर्तन",
         sod: "विमर्श के विषय",
-        txt: "शाखा में होने वाले वैचारिक विमर्श के प्रमुख विषय"
+        txt: "शाखा में होने वाले वैचारिक विमर्श के प्रमुख विषय",
+        txtj:"महापुरुषों की जीवनी"
     },
 
     en:{
@@ -22,7 +23,8 @@ const translations = {
         biography:"Biography",
         panch:"Panch Parivartan",
         sod: "Subject of Discourse",
-        txt: "Main Subjects of Ideological Discourse in the Shakha"
+        txt: "Main Subjects of Ideological Discourse in the Shakha",
+        txtj: "Biographies of Great Personalities"
     }
 };
 
