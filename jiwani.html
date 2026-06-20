@@ -25,43 +25,47 @@
 <div class="logo">
     <span class="logo-emoji">🚩</span>
 
-    <div class="logo-text">
-        <div class="logo-main">
-            e-शाखा पुस्तिका
+        <div class="logo-text">
+
+            <div class="logo-main" data-key="logo">
+                e-शाखा पुस्तिका
+            </div>
+
+            <div class="logo-sub" data-key="rss">
+                राष्ट्रीय स्वयंसेवक संघ, हरियाणा
+            </div>
+
         </div>
 
-        <div class="logo-sub">
-            राष्ट्रीय स्वयंसेवक संघ, हरियाणा
-        </div>
     </div>
-</div>
 
     <nav class="nav-links" id="navLinks">
 
-        <a href="index.html">मुख्य पृष्ठ</a>
+        <a href="index.html" data-key="home">
+            मुख्य पृष्ठ
+        </a>
 
-        <a href="vimarsh.html">
+        <a href="vimarsh.html" class="active" data-key="discourse">
             विमर्श
         </a>
 
-        <a href="activities.html">
+        <a href="activities.html" data-key="activities">
             गतिविधियां
         </a>
 
-        <a href="current-affairs.html">
+        <a href="current-affairs.html" data-key="news">
             समाचार
         </a>
 
-        <a href="jiwani.html" class="active">
+        <a href="jiwani.html" data-key="biography">
             जीवनी
         </a>
 
-        <a href="panch-parivartan.html">
+        <a href="panch-parivartan.html" data-key="panch">
             पंच परिवर्तन
         </a>
 
     </nav>
-
     <button id="themeBtn">
         🌙
     </button>
@@ -159,7 +163,9 @@ fetch("biographies/people.json")
 
 </script>
 
-<script src="script.js"></script>
-
+<!-- <script src="script.js"></script> -->
+<button id="floatingLangBtn" class="floating-lang-btn">
+    EN
+</button>
 </body>
 </html>
