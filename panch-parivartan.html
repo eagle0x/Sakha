@@ -233,26 +233,6 @@ body.dark .importance-box{
     background:rgba(255,140,0,.08);
     border:1px solid rgba(255,140,0,.2);
 }
-.intro-box{
-    margin-bottom:40px;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:35px;
-    box-shadow:var(--shadow);
-}
-
-.intro-box h2{
-    color:var(--primary);
-    text-align:center;
-    margin-bottom:25px;
-}
-
-.intro-box p{
-    text-align:justify;
-    line-height:2;
-    margin-bottom:16px;
-}
 .panch-card{
     cursor:pointer;
 }
@@ -465,7 +445,7 @@ async function loadPanch(){
         "introSection"
     ).innerHTML = `
     
-        <div class="intro-box">
+        <div class="importance-box">
 
             <h2>
                 ${data.subtitle}
