@@ -90,6 +90,15 @@
 
 
 <script>
+/* Mobile Menu */
+
+document.getElementById("menuBtn")
+.addEventListener("click",()=>{
+
+    document.getElementById("navLinks")
+    .classList.toggle("show");
+
+});
 
 /* Theme */
 
@@ -163,9 +172,9 @@ fetch("biographies/people.json")
 
 </script>
 
-<script src="lang.js"></script>
 <button id="floatingLangBtn" class="floating-lang-btn">
     EN
 </button>
+<script src="lang.js"></script>
 </body>
 </html>
