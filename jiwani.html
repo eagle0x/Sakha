@@ -88,8 +88,25 @@
 
 </section>
 
-
+<!-- FOOTER -->
 <script>
+fetch("footer.html")
+.then(res => res.text())
+.then(data => {
+
+    document.getElementById(
+        "footer-container"
+    ).innerHTML = data;
+
+    if(typeof updateLanguage === "function"){
+        updateLanguage();
+    }
+
+});
+</script>
+<div id="footer-container"></div>
+<script>
+    
 /* Mobile Menu */
 
 document.getElementById("menuBtn")
