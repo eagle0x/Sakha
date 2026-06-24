@@ -778,7 +778,7 @@ body {
         #f59e0b
     );
 }
-.card-footer{
+.card-{
 
     color:#ea580c;
 
@@ -940,7 +940,7 @@ footer{
     margin-top:0;
     background:#111827;
     color:white;
-    padding:50px 8%;
+    padding:40px 8%;
 }
 
 .footer-top{
