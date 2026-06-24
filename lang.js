@@ -19,7 +19,9 @@ const translations = {
         game:"खेल",
         sc:"विज्ञान",
         eco:"अर्थव्यवस्था",
-        env:"पर्यावरण"
+        env:"पर्यावरण",
+        name: "शाखा पुस्तिका डिजिटल संस्करण",
+        contact: "संपर्क करें..."
     },
 
     en:{
@@ -42,7 +44,9 @@ const translations = {
         game:"Games",
         sc:"Science",
         eco:"Economy",
-        env:"Enviroment"
+        env:"Enviroment",
+        name: "Shakha Pustika Digital Edition",
+        contact: "Contact us..."
     }
 };
 
