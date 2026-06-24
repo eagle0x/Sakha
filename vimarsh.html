@@ -109,7 +109,23 @@
 
 </section>
 
+<!-- FOOTER -->
 
+<script>
+fetch("footer.html")
+.then(res => res.text())
+.then(data => {
+
+    document.getElementById(
+        "footer-container"
+    ).innerHTML = data;
+
+    if(typeof updateLanguage === "function"){
+        updateLanguage();
+    }
+
+});
+</script>
 <!-- MODAL -->
 
 <div id="topicModal" class="modal">
