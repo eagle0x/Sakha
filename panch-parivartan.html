@@ -351,38 +351,23 @@ body.dark .importance-box{
 </div>
 
 
-    <div class="vande">
+<!-- FOOTER -->
+<script>
+fetch("footer.html")
+.then(res => res.text())
+.then(data => {
 
-        <h1>
-            "वंदे मातरम्"
-        </h1>
+    document.getElementById(
+        "footer-container"
+    ).innerHTML = data;
 
-    </div>
+    if(typeof updateLanguage === "function"){
+        updateLanguage();
+    }
 
-</div>
-
-
-<footer>
-
-    <div class="footer-top">
-
-        <h2>
-            शाखा पुस्तिका
-        </h2>
-
-        <p>
-            शाखा पुस्तिका डिजिटल संस्करण
-        </p>
-
-    </div>
-
-    <div class="copyright">
-
-        © 2026 शाखा पुस्तिका
-
-    </div>
-
-</footer>
+});
+</script>
+<div id="footer-container"></div>
 
 
 <script>
