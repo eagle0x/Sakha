@@ -131,7 +131,60 @@ body.dark .importance-box{
     font-size:4rem;
     color:var(--primary);
 }
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    z-index:9999;
+    padding:20px;
+}
 
+.modal.show{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.current-modal{
+    background:var(--card);
+    color:var(--text);
+    width:95%;
+    max-width:1000px;
+    max-height:90vh;
+    overflow-y:auto;
+    border-radius:20px;
+    padding:30px;
+    position:relative;
+}
+
+.close-btn{
+    position:absolute;
+    right:25px;
+    top:15px;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+.modal-body{
+    line-height:2;
+}
+
+.modal-body ul{
+    margin:15px 0;
+    padding-left:20px;
+}
+
+.modal-body li{
+    margin-bottom:10px;
+}
+.panch-card{
+    cursor:pointer;
+}
+
+.panch-card:hover{
+    transform:translateY(-5px);
+}
 @media(max-width:768px){
 
     .page-header h1{
@@ -222,113 +275,20 @@ body.dark .importance-box{
     </div>
 
 
-    <div class="panch-grid">
+<div class="panch-grid" id="panchGrid"></div>
 
-        <div class="panch-card">
+<!-- Modal -->
+<div id="panchModal" class="modal">
 
-            <div class="panch-top">
+    <div class="modal-content current-modal">
 
-                <div class="panch-number">
-                    1
-                </div>
+        <span id="closeModal" class="close-btn">×</span>
 
-                <div class="panch-title">
-                    स्व का बोध
-                </div>
-
-            </div>
-
-            <p>
-                अपनी पहचान, संस्कृति और मूल्यों की समझ विकसित करना।
-            </p>
-
-        </div>
-
-
-        <div class="panch-card">
-
-            <div class="panch-top">
-
-                <div class="panch-number">
-                    2
-                </div>
-
-                <div class="panch-title">
-                    नागरिक कर्तव्य
-                </div>
-
-            </div>
-
-            <p>
-                राष्ट्र के प्रति अपने दायित्वों को समझना और उनका निष्ठापूर्वक निर्वहन करना।
-            </p>
-
-        </div>
-
-
-        <div class="panch-card">
-
-            <div class="panch-top">
-
-                <div class="panch-number">
-                    3
-                </div>
-
-                <div class="panch-title">
-                    पर्यावरण
-                </div>
-
-            </div>
-
-            <p>
-                प्रकृति के संरक्षण और पर्यावरण की सुरक्षा के लिए सक्रिय प्रयास करना।
-            </p>
-
-        </div>
-
-
-        <div class="panch-card">
-
-            <div class="panch-top">
-
-                <div class="panch-number">
-                    4
-                </div>
-
-                <div class="panch-title">
-                    सामाजिक समरसता
-                </div>
-
-            </div>
-
-            <p>
-                समाज में एकता, भाईचारा और सद्भावना का विकास करना।
-            </p>
-
-        </div>
-
-
-        <div class="panch-card">
-
-            <div class="panch-top">
-
-                <div class="panch-number">
-                    5
-                </div>
-
-                <div class="panch-title">
-                    कुटुंब प्रबोधन
-                </div>
-
-            </div>
-
-            <p>
-                पारिवारिक मूल्यों को मजबूत बनाना और संस्कारों का संचार करना।
-            </p>
-
-        </div>
+        <div id="modalBody"></div>
 
     </div>
+
+</div>
 
 
     <div class="importance-box">
@@ -416,6 +376,172 @@ document.getElementById("themeBtn")
     );
 
 });
+
+</script>
+<script>
+
+let panchData = [];
+
+async function loadPanch(){
+
+    const res = await fetch(
+        "articles/panch-parivartan.json"
+    );
+
+    const data = await res.json();
+
+    panchData = data.sections;
+
+    renderCards();
+
+}
+
+function renderCards(){
+
+    const grid =
+    document.getElementById("panchGrid");
+
+    grid.innerHTML = "";
+
+    panchData.forEach(section=>{
+
+        if(section.id === 0) return;
+
+        grid.innerHTML += `
+
+<div
+    class="panch-card"
+    onclick="openSection(${section.id})">
+
+    <div class="panch-top">
+
+        <div class="panch-number">
+            ${section.id}
+        </div>
+
+        <div class="panch-title">
+            ${section.title}
+        </div>
+
+    </div>
+
+    <p>
+        ${section.summary}
+    </p>
+
+</div>
+
+`;
+
+    });
+
+}
+
+function openSection(id){
+
+    const section =
+    panchData.find(
+        s => s.id === id
+    );
+
+    if(!section) return;
+
+    let html = `
+
+        <h2>
+            ${section.title}
+        </h2>
+
+    `;
+
+    if(section.summary){
+
+        html += `
+        <p>
+            <strong>${section.summary}</strong>
+        </p>
+        `;
+    }
+
+    if(section.content){
+
+        section.content.forEach(p=>{
+
+            html += `
+            <p>${p}</p>
+            `;
+
+        });
+
+    }
+
+    if(section.youth_can_do){
+
+        html += `
+        <h3>
+            युवा क्या कर सकते हैं?
+        </h3>
+
+        <ul>
+        `;
+
+        section.youth_can_do.forEach(item=>{
+
+            html += `
+            <li>${item}</li>
+            `;
+
+        });
+
+        html += `
+        </ul>
+        `;
+    }
+
+    if(section.conclusion){
+
+        html += `
+        <h3>निष्कर्ष</h3>
+
+        <p>
+            ${section.conclusion}
+        </p>
+        `;
+    }
+
+    document
+    .getElementById("modalBody")
+    .innerHTML = html;
+
+    document
+    .getElementById("panchModal")
+    .classList.add("show");
+
+}
+
+document
+.getElementById("closeModal")
+.addEventListener("click",()=>{
+
+    document
+    .getElementById("panchModal")
+    .classList.remove("show");
+
+});
+
+window.addEventListener("click",(e)=>{
+
+    if(e.target.id==="panchModal"){
+
+        document
+        .getElementById("panchModal")
+        .classList.remove("show");
+
+    }
+
+});
+
+loadPanch();
 
 </script>
 <button id="floatingLangBtn" class="floating-lang-btn">
