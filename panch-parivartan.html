@@ -233,12 +233,39 @@ body.dark .importance-box{
     background:rgba(255,140,0,.08);
     border:1px solid rgba(255,140,0,.2);
 }
+.intro-box{
+    margin-bottom:40px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:35px;
+    box-shadow:var(--shadow);
+}
+
+.intro-box h2{
+    color:var(--primary);
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.intro-box p{
+    text-align:justify;
+    line-height:2;
+    margin-bottom:16px;
+}
 .panch-card{
     cursor:pointer;
 }
 
 .panch-card:hover{
     transform:translateY(-5px);
+}
+.current-modal{
+    scrollbar-width: thin;
+}
+.panch-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
 }
 @media(max-width:768px){
 
@@ -339,7 +366,7 @@ body.dark .importance-box{
 
         <span id="closeModal" class="close-btn">×</span>
 
-        <div id="modalBody"></div>
+        <div id="modalBody" class="modal-body"></div>
 
     </div>
 
@@ -437,8 +464,8 @@ async function loadPanch(){
     document.getElementById(
         "introSection"
     ).innerHTML = `
-
-        <div class="importance-box">
+    
+        <div class="intro-box">
 
             <h2>
                 ${data.subtitle}
@@ -545,11 +572,9 @@ function openSection(id){
     if(section.summary){
 
         html += `
-        <p>
-            <div class="modal-summary">
-                ${section.summary}
-            </div>
-        </p>
+        <div class="modal-summary">
+            ${section.summary}
+        </div>
         `;
     }
 
