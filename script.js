@@ -603,6 +603,7 @@ const translations = {
         news: "समाचार",
         biography: "जीवनी",
         panch: "पंच परिवर्तन",
+        patrika: "अनुभूति e-पत्रिका",
 
         all:"सभी",
         subhasit: "सुभाषित",
@@ -627,6 +628,7 @@ const translations = {
         news: "News",
         biography: "Biography",
         panch: "Panch Parivartan",
+        patrika: "Anubhuti e-Magazine",
 
         all:"All",
         subhasit: "Subhashit",
