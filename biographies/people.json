@@ -29,5 +29,21 @@
         "image": "images/apj.jpg",
         "description": "भारत रत्न एवं मिसाइल मैन",
         "file": "apj.json"
+    },
+    
+    {
+        "id": 5,
+        "name": "शहीद उधम सिंह",
+        "image": "images/udham.jpg",
+        "description": "जलियांवाला बाग के प्रतिशोध और अदम्य देशभक्ति के प्रतीक",
+        "file": "udham.json"
+    },
+    
+    {
+        "id": 6,
+        "name": "श्यामजी कृष्ण वर्मा",
+        "image": "images/shyamji.jpg",
+        "description": "महान क्रांतिकारी, राष्ट्रवादी चिंतक एवं स्वतंत्रता सेनानी",
+        "file": "shyamji.json"
     }
 ]
